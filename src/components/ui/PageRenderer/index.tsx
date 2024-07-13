@@ -18,6 +18,7 @@ export function PageRenderer({ fitIntoPx, children }: Props) {
             className={style.a4}
             ref={previewRef}
             style={{
+                // FIXME: breaks print if scale is < 1
                 transform: `scale(${previewScale})`,
                 transformOrigin: 'top center',
             }}
