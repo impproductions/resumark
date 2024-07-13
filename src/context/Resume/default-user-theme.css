@@ -1,0 +1,103 @@
+.markdowner-theme {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.markdowner-theme h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme h2 {
+    font-size: 1.75em;
+    margin: 0.75em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme h3 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme h4 {
+    font-size: 1.25em;
+    margin: 1.12em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme h5 {
+    font-size: 1em;
+    margin: 1.5em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme h6 {
+    font-size: 0.875em;
+    margin: 1.67em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme p {
+    margin: 1em 0;
+}
+
+.markdowner-theme blockquote {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    border-left: 0.25em solid #dfe2e5;
+    background: #f8f8f8;
+}
+
+.markdowner-theme ul,
+.markdowner-theme ol {
+    padding-left: 2em;
+    margin: 1em 0;
+}
+
+.markdowner-theme li {
+    margin: 0.5em 0;
+}
+
+.markdowner-theme pre {
+    background: #f8f8f8;
+    padding: 1em;
+    overflow: auto;
+    border-radius: 4px;
+}
+
+.markdowner-theme code {
+    font-family: 'Courier New', Courier, monospace;
+    background: #f8f8f8;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+}
+
+.markdowner-theme a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.markdowner-theme a:hover {
+    text-decoration: underline;
+}
+
+.markdowner-theme img {
+    max-width: 100%;
+    height: auto;
+}
+
+.markdowner-theme table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.markdowner-theme th,
+.markdowner-theme td {
+    border: 1px solid #dfe2e5;
+    padding: 0.6em 1em;
+    text-align: left;
+}

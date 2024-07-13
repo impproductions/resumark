@@ -6,7 +6,7 @@ import { useWindowSize } from '../../../hooks/useWindowSize';
 import { MarkdownParser } from '../../ui/MarkdownParser';
 
 export function EditorContent() {
-    const { content, setContent } = useResumeState();
+    const { content, setContent, theme } = useResumeState();
     const { windowSize } = useWindowSize();
     const previewColumnRef = useRef<HTMLDivElement>(null);
     const [fitIntoPx, setFitIntoPx] = useState(0);
@@ -18,7 +18,7 @@ export function EditorContent() {
         }
 
         const previewColumnWidth = previewColumn.clientWidth;
-        setFitIntoPx(previewColumnWidth - 10);
+        setFitIntoPx(previewColumnWidth - 20); // FIXME: magic number
     }, [windowSize]);
 
     return (
@@ -35,7 +35,7 @@ export function EditorContent() {
                 <div className={style.previewTitle}>Preview</div>
                 <div className={style.previewContent}>
                     <PageRenderer fitIntoPx={fitIntoPx}>
-                        <MarkdownParser markdown={content} />
+                        <MarkdownParser markdown={content} css={theme} />
                     </PageRenderer>
                 </div>
             </div>

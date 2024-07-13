@@ -2,6 +2,8 @@
 import { useState, ReactNode, FC, createContext } from 'react';
 import { ResumeContextType, ResumeData } from './types';
 
+import defaultCss from './default-user-theme.css?raw';
+
 export const ResumeContext = createContext<ResumeContextType | undefined>(
     undefined
 );
@@ -26,7 +28,7 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [data, setData] = useState<ResumeData>(
         getLocalStorage() || {
             content: '',
-            theme: 'default',
+            theme: String(defaultCss),
         }
     );
 
@@ -42,10 +44,10 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
         });
     };
 
-    const setTheme = (newTheme: string) => {
+    const setTheme = (theme: string) => {
         setDataWrapper({
             ...data,
-            theme: newTheme,
+            theme,
         });
     };
 

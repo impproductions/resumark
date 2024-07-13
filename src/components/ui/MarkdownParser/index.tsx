@@ -5,12 +5,14 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 
 import style from './MarkdownParser.module.scss';
+import classNames from 'classnames';
 
 interface Props {
     markdown: string;
+    css: string;
 }
 
-export function MarkdownParser({ markdown }: Props) {
+export function MarkdownParser({ markdown, css }: Props) {
     const [html, setHtml] = useState('');
 
     useEffect(() => {
@@ -31,8 +33,12 @@ export function MarkdownParser({ markdown }: Props) {
     }, [markdown]);
 
     return (
+        // TODO: security issue?
         <div className={style.previewReset}>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+            <div className={classNames(style.preview, 'markdowner-theme')}>
+                <style type="text/css">{css}</style>
+                <div dangerouslySetInnerHTML={{ __html: html }} />
+            </div>
         </div>
     );
 }

@@ -21,6 +21,7 @@
     width: 70%;
     height: 100%;
     padding: 0.5rem;
+    padding-right: 0;
     box-sizing: border-box;
 
     @media screen and (max-width: $breakpoint-sm) {
@@ -37,6 +38,7 @@
         background-color: var(--color-surface-1);
         outline: 0;
         border: 0;
+        overflow-y: auto;
     }
 }
 
@@ -47,7 +49,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    overflow-y: scroll;
+    // overflow-y: auto;
     @media screen and (max-width: $breakpoint-sm) {
         width: 100%;
         height: 30%;
@@ -57,11 +59,13 @@
 .preview-title {
     font-size: 1.5rem;
     font-weight: 600;
-    margin: 0.5rem;
+    padding: 0.5rem;
 }
 
 .preview-content {
+    display: flex;
+    justify-content: center;
     overflow: visible;
-    width: 10px;
-    height: 10px;
+    width: 100%;
+    height: 20%;
 }

@@ -19,7 +19,7 @@ export function PageRenderer({ fitIntoPx, children }: Props) {
             ref={previewRef}
             style={{
                 transform: `scale(${previewScale})`,
-                transformOrigin: 'top left',
+                transformOrigin: 'top center',
             }}
         >
             {children}

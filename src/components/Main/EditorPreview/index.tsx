@@ -7,7 +7,7 @@ import { PageRenderer } from '../../ui/PageRenderer';
 import { MarkdownParser } from '../../ui/MarkdownParser';
 
 export function EditorPreview() {
-    const { content } = useResumeState();
+    const { content, theme } = useResumeState();
     const previewRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const { boxSize } = useBoxSize(previewRef);
@@ -27,7 +27,7 @@ export function EditorPreview() {
     return (
         <div className={style.container} ref={containerRef}>
             <PageRenderer fitIntoPx={fitIntoPx}>
-                <MarkdownParser markdown={content} />
+                <MarkdownParser markdown={content} css={theme} />
             </PageRenderer>
         </div>
     );
