@@ -34,7 +34,6 @@
     --color-dark-contrast: #f8f9fa;
 
     /* color contrasts */
-    --color-bg: white;
     --color-surface-1: #f8f9fa;
     --color-surface-2: #e9ecef;
     --color-surface-3: #dee2e6;
@@ -46,11 +45,14 @@
     --color-contrast-medium: rgb(121, 121, 124);
     --color-contrast-high: rgb(49, 49, 53);
     --color-contrast-higher: black;
+
+    --color-bg: white;
+    --color-text: var(--color-contrast-high);
 }
 
 [data-theme] {
     background-color: var(--color-bg);
-    color: var(--color-contrast-high);
+    color: var(--color-text);
 }
 
 [data-theme='dark'] {
@@ -81,7 +83,6 @@
     --color-dark-contrast: #f8f9fa;
 
     /* color contrasts */
-    --color-bg: black;
     --color-surface-1: #343a40;
     --color-surface-2: #495057;
     --color-surface-3: #6c757d;
@@ -93,4 +94,7 @@
     --color-contrast-medium: rgb(144, 144, 146);
     --color-contrast-high: rgb(227, 227, 227);
     --color-contrast-higher: white;
+
+    --color-bg: black;
+    --color-text: var(--color-contrast-high);
 }

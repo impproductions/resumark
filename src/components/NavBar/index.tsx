@@ -15,17 +15,13 @@ export function NavBar() {
             </div>
             <div className={style.buttonGroup}>
                 <button
-                    className={
-                        state.currentView === 'content' ? style.selected : ''
-                    }
                     onClick={() => onViewSelectClick('content')}
+                    aria-selected={state.currentView === 'content'}
                 >
                     Content
                 </button>
                 <button
-                    className={
-                        state.currentView === 'preview' ? style.selected : ''
-                    }
+                    aria-selected={state.currentView === 'preview'}
                     onClick={() => onViewSelectClick('preview')}
                 >
                     Preview
