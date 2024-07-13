@@ -1,7 +1,75 @@
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
     width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.size-debugger {
+    z-index: 10000000;
+    position: relative;
+    top: 50px;
+    right: 50px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.a4 {
+    width: 210mm;
+    min-width: 210mm;
+    max-width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 10mm;
+
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5mm rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    background-color: white;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    .container {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    .a4 {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 210mm;
+        min-width: 210mm;
+        max-width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
+        max-height: 297mm;
+        margin: 0;
+    }
+}
+
+.preview-reset {
+    all: initial;
+}
+
+.preview-reset * {
+    all: revert;
 }

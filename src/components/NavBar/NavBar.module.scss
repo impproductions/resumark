@@ -17,3 +17,25 @@
 .selected {
     background-color: var(--color-secondary);
 }
+
+.title {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+    p {
+        text-align: left;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
+
+.theme-switch-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.3rem;
+}
