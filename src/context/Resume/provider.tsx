@@ -21,7 +21,13 @@ const getLocalStorage = (): ResumeData | null => {
     if (!data) {
         return null;
     }
-    return JSON.parse(data);
+
+    const parsedData = JSON.parse(data);
+
+    console.warn('Overriding localStorage theme data with default data');
+    parsedData.theme = String(defaultCss);
+
+    return parsedData;
 };
 
 export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {

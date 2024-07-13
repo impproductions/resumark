@@ -3,9 +3,11 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
+import classNames from 'classnames';
+import remarkGfm from 'remark-gfm';
 
 import style from './MarkdownParser.module.scss';
-import classNames from 'classnames';
+import './markdowner-theme.css';
 
 interface Props {
     markdown: string;
@@ -20,6 +22,7 @@ export function MarkdownParser({ markdown, css }: Props) {
             try {
                 const file = await unified()
                     .use(remarkParse)
+                    .use(remarkGfm)
                     .use(remarkRehype)
                     .use(rehypeStringify)
                     .process(markdown);
