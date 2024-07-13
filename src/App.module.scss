@@ -1,0 +1,58 @@
+@import 'variables';
+
+.page-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--color-surface-1);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: $layout-width-sm;
+    max-width: $layout-max-width-sm;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--color-bg);
+
+    @media screen and (min-width: $breakpoint-md) {
+        width: $layout-width-md;
+        max-width: $layout-max-width-md;
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+        width: $layout-width-lg;
+        max-width: $layout-max-width-lg;
+    }
+
+    @media screen and (min-width: $breakpoint-xl) {
+        width: $layout-width-xl;
+        max-width: $layout-max-width-xl;
+    }
+}
+
+.nav-bar {
+    display: flex;
+    height: var(--navbar-height);
+    width: 100%;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - var(--navbar-height));
+    overflow-x: hidden;
+    overflow-y: auto;
+}
