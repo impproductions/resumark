@@ -57,26 +57,12 @@ button:hover {
     border-color: var(--color-primary-highlight);
     box-shadow: 0rem 0rem 0.1rem 0.1rem var(--color-primary-highlight);
 }
-button:focus,
+/* button:focus,
 button:focus-visible {
-    /* outline: 4px auto -webkit-focus-ring-color; */
-}
+} */
 
 button[aria-selected='true'] {
     border-color: var(--color-primary-highlight);
     background-color: var(--color-primary);
     color: var(--color-primary-contrast);
 }
-
-/* @media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
-} */

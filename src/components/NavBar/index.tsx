@@ -1,6 +1,8 @@
 import style from './NavBar.module.scss';
 import { useEditorState } from '../../context/Editor/hook';
 
+// TODO: mobile
+
 export function NavBar() {
     const { state, config, setCurrentView, setTheme } = useEditorState();
 

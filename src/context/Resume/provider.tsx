@@ -6,6 +6,7 @@ export const ResumeContext = createContext<ResumeContextType | undefined>(
     undefined
 );
 
+// TODO: hook
 const updateLocalStorage = (resumeData: ResumeData) => {
     localStorage.setItem(
         'resumark.state.resume.data',
