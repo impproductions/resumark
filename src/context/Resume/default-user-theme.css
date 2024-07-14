@@ -1,7 +1,12 @@
 .markdowner-theme {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.4;
     color: #333;
+}
+
+.markdowner-theme .column:nth-of-type(2) {
+    background-color: #efefef;
+    padding: 1rem;
 }
 
 .markdowner-theme h1 {
@@ -55,8 +60,8 @@
     margin-top: 0.7rem;
 }
 .markdowner-theme p {
-    margin: 0.3em 0;
-    margin-bottom: 0.3em;
+    margin: 0.1rem 0;
+    margin-bottom: 0.1rem;
 }
 
 .markdowner-theme blockquote {
@@ -85,11 +90,11 @@
 
 .markdowner-theme code {
     font-family: inherit;
-    background: #f8f8f8;
-    padding: 0.1em 0.3em;
+    background: #fff;
+    padding: 0.3em 0.3em;
     border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    line-height: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    line-height: 1.5rem;
 }
 
 .markdowner-theme a {

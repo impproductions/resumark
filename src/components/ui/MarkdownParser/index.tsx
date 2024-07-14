@@ -63,7 +63,7 @@ export function MarkdownParser({ markdown, css }: Props) {
                 {columns.map((column, index) => (
                     <div
                         key={index}
-                        className={style.column}
+                        className={'column'}
                         dangerouslySetInnerHTML={{ __html: column }}
                     />
                 ))}

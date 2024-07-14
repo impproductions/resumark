@@ -2,6 +2,12 @@
     font-size: 8pt;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .markdowner-theme .align-right {
     text-align: right;
 }

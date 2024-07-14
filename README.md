@@ -32,14 +32,19 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   CSS editor ✅
 -   Icons ✅
 -   Vertical Spacer ✅
+-   Persistent editor settings
+-   Actual editors instead of textareas
+-   CSS variables in markdowner-theme?
 -   Expose custom element styles in custom css
 -   Resume columns resize and styling
--   Editor columns resize
 -   Allow escaping custom symbols
 -   Sandbox page preview
 
-### Major features
+### Features
 
--   Actual editors instead of textareas
+-   Editor columns resize
+
+### Unlikely to happen
+
 -   Page support
 -   Docx export
