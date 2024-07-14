@@ -22,8 +22,17 @@ todo
 
 ## Roadmap
 
+### In progress
+
 CSS editor
 Icons
 Vertical Spacer
+Columns resize and styling
 Allow escaping custom symbols
+Sandbox page preview
+
+### Major features
+
 Actual editors instead of textareas
+Docx export
+Page support
