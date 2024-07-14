@@ -1,29 +1,47 @@
 // EditorProvider.tsx
-import { useState, ReactNode, FC, createContext } from 'react';
-import { EditorContextType } from './types';
+import { useState, ReactNode, FC, createContext, useEffect } from 'react';
+import { EditorConfig, EditorContextType, EditorState } from './types';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const EditorContext = createContext<EditorContextType | undefined>(
     undefined
 );
 
+const DEFAULT_CONFIG: EditorConfig = {
+    theme: 'light',
+};
+
+const DEFAULT_STATE: EditorState = {
+    currentView: 'content',
+};
+
 export const EditorProvider: FC<{ children: ReactNode }> = ({ children }) => {
-    const [config, setConfig] = useState<{ theme: 'light' | 'dark' }>({
-        theme: 'light',
-    });
-    const [state, setState] = useState<{ currentView: 'content' | 'preview' }>({
-        currentView: 'content',
-    });
+    const { updateLocalStorage, getLocalStorage } = useLocalStorage();
+    const [config, setConfig] = useState<EditorConfig>(
+        getLocalStorage('resumark.editor.config') || DEFAULT_CONFIG
+    );
+    const [state, setState] = useState<EditorState>(
+        getLocalStorage('resumark.editor.state') || DEFAULT_STATE
+    );
 
     const setTheme = (theme: 'light' | 'dark') => {
         setConfig({ ...config, theme });
-        document
-            .querySelector('html')!
-            .setAttribute('data-theme', theme === 'light' ? 'default' : 'dark');
     };
 
     const setCurrentView = (view: 'content' | 'preview') => {
         setState({ ...state, currentView: view });
     };
+
+    useEffect(() => {
+        updateLocalStorage(config, 'resumark.editor.config');
+        updateLocalStorage(state, 'resumark.editor.state');
+        document
+            .querySelector('html')!
+            .setAttribute(
+                'data-theme',
+                config.theme === 'light' ? 'default' : 'dark'
+            );
+    }, [config, state, updateLocalStorage]);
 
     return (
         <EditorContext.Provider

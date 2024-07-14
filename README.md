@@ -32,13 +32,19 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   CSS editor ✅
 -   Icons ✅
 -   Vertical Spacer ✅
--   Persistent editor settings
--   Actual editors instead of textareas
+-   Persistent editor settings ✅
+-   Actual editors instead of textareas ✅(?)
+-   Icon/Favicon ✅
+-   Theme switcher
+-   Save as... for theme
+-   Multiple resumes
 -   CSS variables in markdowner-theme?
 -   Expose custom element styles in custom css
 -   Resume columns resize and styling
 -   Allow escaping custom symbols
 -   Sandbox page preview
+-   Extend Monaco Markdown syntax highlighting with new elements
+-   Make page preview fit vertically
 
 ### Features
 

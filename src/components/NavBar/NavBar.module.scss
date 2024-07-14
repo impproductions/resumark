@@ -18,6 +18,12 @@
     background-color: var(--color-secondary);
 }
 
+.logo {
+    height: 40%;
+    aspect-ratio: 1;
+    margin-right: 1rem;
+}
+
 .title {
     flex-direction: row;
     justify-content: flex-start;

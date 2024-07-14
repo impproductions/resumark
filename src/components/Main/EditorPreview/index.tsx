@@ -28,10 +28,10 @@ export function EditorPreview() {
     return (
         <div className={style.container}>
             <div className={style.cssContainer} ref={containerRef}>
-                <CodeEditor text={theme} onChange={setTheme} />
+                <CodeEditor text={theme} onChange={setTheme} language={'css'} />
             </div>
             <div className={style.previewContainer} ref={containerRef}>
-                <PageRenderer fitIntoPx={fitIntoPx} maxScale={-1}>
+                <PageRenderer fitIntoPx={fitIntoPx} maxScale={1}>
                     <MarkdownParser markdown={content} css={theme} />
                 </PageRenderer>
             </div>

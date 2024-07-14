@@ -1,20 +1,29 @@
-import React from 'react';
+import { Editor } from '@monaco-editor/react';
+import { useEditorState } from '../../../context/Editor/hook';
 import style from './CodeEditor.module.scss';
 
 interface Props {
+    language: 'css' | 'markdown';
     text: string;
     onChange?: (text: string) => void;
     onCommit?: (text: string) => void;
 }
 
-export function CodeEditor({ text, onChange, onCommit }: Props) {
+export function CodeEditor({ text, onChange, language }: Props) {
+    const { config } = useEditorState();
+
     return (
         <div className={style.container}>
-            <textarea
-                className={style.textarea}
+            <Editor
+                height="100%"
+                defaultLanguage={language}
+                options={{
+                    minimap: { enabled: false },
+                    automaticLayout: true,
+                }}
                 value={text}
-                onChange={(e) => onChange?.(e.target.value)}
-                onBlur={() => onCommit?.(text)}
+                onChange={(value) => onChange?.(value || '')}
+                theme={config.theme === 'light' ? 'light' : 'vs-dark'}
             />
         </div>
     );

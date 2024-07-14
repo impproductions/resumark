@@ -51,11 +51,11 @@ button {
     background-color: transparent;
     cursor: pointer;
     color: var(--color-text);
-    transition: border-color 0.25s;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
 }
 button:hover {
     border-color: var(--color-primary-highlight);
-    box-shadow: 0rem 0rem 0.1rem 0.1rem var(--color-primary-highlight);
+    box-shadow: 0rem 0rem 0.5rem 0rem var(--color-primary-highlight);
 }
 
 button[aria-selected='true'] {

@@ -1,5 +1,6 @@
 import style from './NavBar.module.scss';
 import { useEditorState } from '../../context/Editor/hook';
+import resumarkLogo from '../../assets/resumark-icon.png';
 
 // TODO: mobile
 
@@ -12,6 +13,7 @@ export function NavBar() {
 
     return (
         <div className={style.container}>
+            <img src={resumarkLogo} alt="ResuMark" className={style.logo} />
             <div className={style.title}>
                 <p>ResuMark</p>
             </div>

@@ -29,6 +29,7 @@ export function EditorContent() {
                     text={content}
                     onChange={setContent}
                     onCommit={setContent}
+                    language="markdown"
                 />
             </div>
             <div className={style.preview} ref={previewColumnRef}>
