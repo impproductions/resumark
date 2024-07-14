@@ -8,6 +8,8 @@ import remarkGfm from 'remark-gfm';
 
 import style from './MarkdownParser.module.scss';
 import './markdowner-theme.css';
+import { remarkAlignRight } from '../../../markdown/rehype-plugins/send-right';
+import { remarkLevelBar } from '../../../markdown/rehype-plugins/level-bar';
 
 interface Props {
     markdown: string;
@@ -15,32 +17,51 @@ interface Props {
 }
 
 export function MarkdownParser({ markdown, css }: Props) {
-    const [html, setHtml] = useState('');
+    // const [html, setHtml] = useState('');
+    const [columns, setColumns] = useState<string[]>([]);
 
     useEffect(() => {
-        const processMarkdown = async () => {
+        const splitColumns = markdown.split('|||||');
+
+        const processMarkdown = async (md: string) => {
             try {
                 const file = await unified()
                     .use(remarkParse)
                     .use(remarkGfm)
+                    .use(remarkAlignRight)
+                    .use(remarkLevelBar)
                     .use(remarkRehype)
                     .use(rehypeStringify)
-                    .process(markdown);
-                setHtml(String(file));
+                    .process(md);
+                return String(file);
             } catch (error) {
                 console.error('Error processing markdown:', error);
+                return '';
             }
         };
 
-        processMarkdown();
-    }, [markdown]);
+        const processAllColumns = async () => {
+            const processedColumns = await Promise.all(
+                splitColumns.map(processMarkdown)
+            );
+            setColumns(processedColumns);
+        };
 
+        processAllColumns();
+    }, [markdown]);
     return (
         // TODO: security issue?
         <div className={style.previewReset}>
             <div className={classNames(style.preview, 'markdowner-theme')}>
                 <style type="text/css">{css}</style>
-                <div dangerouslySetInnerHTML={{ __html: html }} />
+                {columns.map((column, index) => (
+                    <div
+                        key={index}
+                        className={style.column}
+                        dangerouslySetInnerHTML={{ __html: column }}
+                    />
+                ))}
+                {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
             </div>
         </div>
     );
