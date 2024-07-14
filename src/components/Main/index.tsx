@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './Main.module.scss';
 import { useEditorState } from '../../context/Editor/hook';
 import { EditorContent } from './EditorContent';
