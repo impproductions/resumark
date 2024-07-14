@@ -37,13 +37,13 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   Icon/Favicon ✅
 -   Theme switcher ✅
 -   Save as... for theme ✅
--   Select theme at startup
--   Select newly added theme
+-   Select theme at startup ✅
+-   Select newly added theme ✅
 -   Multiple resumes
 -   Export/push themes
--   CSS variables in markdowner-theme?
--   Expose custom element styles in custom css
--   Resume columns resize and styling
+-   CSS variables in markdowner-theme? ✅
+-   Expose custom element styles in custom css ✅
+-   CV columns resize and styling
 -   Allow escaping custom symbols
 -   Sandbox page preview
 -   Extend Monaco Markdown syntax highlighting with new elements
