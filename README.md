@@ -30,9 +30,11 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 ### In progress
 
 -   CSS editor ✅
--   Icons
--   Vertical Spacer
--   Columns resize and styling
+-   Icons ✅
+-   Vertical Spacer ✅
+-   Expose custom element styles in custom css
+-   Resume columns resize and styling
+-   Editor columns resize
 -   Allow escaping custom symbols
 -   Sandbox page preview
 

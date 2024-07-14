@@ -12,6 +12,7 @@ import { remarkAlignRight } from '../../../markdown/rehype-plugins/send-right';
 import { remarkLevelBar } from '../../../markdown/rehype-plugins/level-bar';
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { remarkVerticalSpacer } from '../../../markdown/rehype-plugins/vertical-spacer';
 
 // import 'css.gg/icons/icons.css';
 
@@ -33,6 +34,7 @@ export function MarkdownParser({ markdown, css }: Props) {
                     .use(remarkGfm)
                     .use(remarkAlignRight)
                     .use(remarkLevelBar)
+                    .use(remarkVerticalSpacer)
                     .use(remarkRehype)
                     .use(rehypeStringify)
                     .process(md);
