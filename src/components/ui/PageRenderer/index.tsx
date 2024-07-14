@@ -5,13 +5,18 @@ import { useBoxSize } from '../../../hooks/useBoxSize';
 interface Props {
     fitIntoPx: number;
     children?: React.ReactNode;
+    maxScale?: number;
 }
 
-export function PageRenderer({ fitIntoPx, children }: Props) {
+export function PageRenderer({ fitIntoPx, children, maxScale = 1 }: Props) {
     const previewRef = useRef<HTMLDivElement>(null);
     const { boxSize } = useBoxSize(previewRef);
 
-    const previewScale = scaleToFitIntoWidth(fitIntoPx, boxSize?.width || 0); // FIXME
+    const previewScale = scaleToFitIntoWidth(
+        fitIntoPx,
+        boxSize?.width || 0, // FIXME: boxSize should never be undefined
+        maxScale
+    );
 
     return (
         <div
@@ -27,9 +32,18 @@ export function PageRenderer({ fitIntoPx, children }: Props) {
     );
 }
 
-function scaleToFitIntoWidth(windowWidth: number, boxWidth: number) {
+function scaleToFitIntoWidth(
+    windowWidth: number,
+    boxWidth: number,
+    maxScale = 1
+) {
     if (!boxWidth) {
         return 1;
     }
-    return Math.min(1, windowWidth / boxWidth);
+
+    if (maxScale === -1) {
+        return windowWidth / boxWidth;
+    }
+
+    return Math.min(maxScale, windowWidth / boxWidth);
 }

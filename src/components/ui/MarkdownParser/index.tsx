@@ -17,7 +17,6 @@ interface Props {
 }
 
 export function MarkdownParser({ markdown, css }: Props) {
-    // const [html, setHtml] = useState('');
     const [columns, setColumns] = useState<string[]>([]);
 
     useEffect(() => {

@@ -7,7 +7,7 @@ import { PageRenderer } from '../../ui/PageRenderer';
 import { MarkdownParser } from '../../ui/MarkdownParser';
 
 export function EditorPreview() {
-    const { content, theme } = useResumeState();
+    const { content, theme, setTheme } = useResumeState();
     const previewRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const { boxSize } = useBoxSize(previewRef);
@@ -21,14 +21,23 @@ export function EditorPreview() {
         }
 
         const containerWidth = container.clientWidth;
-        setFitIntoPx(containerWidth - 40);
+        setFitIntoPx(containerWidth);
     }, [boxSize, windowSize.width]);
 
     return (
-        <div className={style.container} ref={containerRef}>
-            <PageRenderer fitIntoPx={fitIntoPx}>
-                <MarkdownParser markdown={content} css={theme} />
-            </PageRenderer>
+        <div className={style.container}>
+            <div className={style.cssContainer} ref={containerRef}>
+                <textarea
+                    className={style.textarea}
+                    value={theme}
+                    onChange={(e) => setTheme(e.target.value)}
+                />
+            </div>
+            <div className={style.previewContainer} ref={containerRef}>
+                <PageRenderer fitIntoPx={fitIntoPx} maxScale={-1}>
+                    <MarkdownParser markdown={content} css={theme} />
+                </PageRenderer>
+            </div>
         </div>
     );
 }

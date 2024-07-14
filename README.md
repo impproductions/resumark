@@ -4,7 +4,7 @@ This is a weekend project I created because I needed to update my resume and I c
 
 ## How it works
 
-I decided to leverage one of the greatest inventions of our time: the Markdown language. This thing is basically just Markdown, extended with a couple of additional pre-configured objects for quality of life.
+I decided to leverage one of the greatest inventions of our time: the Markdown language. This thing is basically just Markdown, extended with a couple of additional goodies for quality of life.
 
 ## FAQ
 
@@ -20,19 +20,24 @@ todo
 -   No UI: the resume is defined by the text you write and that's it
 -   Storage: the resume is stored in your local storage as a text file. If you're using the application in incognito mode or you clear application data you _will_ lose it
 
+## This sucks, are there better alternatives?
+
+Yes! While frantically working on this to fit it in a busy weekend, I realised I might not be exactly pioneering the concept of "using a slightly extended version of markdown for a specific application", so I did some research and stumbled upon [Resumey](https://resumey.pro).
+If you like the concept of ResuMark and wish someone actually made it happen, I would highly recommend you to use that and never look back! I'm not affiliated, I'm just a fan.
+
 ## Roadmap
 
 ### In progress
 
-CSS editor
-Icons
-Vertical Spacer
-Columns resize and styling
-Allow escaping custom symbols
-Sandbox page preview
+-   CSS editor
+-   Icons
+-   Vertical Spacer
+-   Columns resize and styling
+-   Allow escaping custom symbols
+-   Sandbox page preview
 
 ### Major features
 
-Actual editors instead of textareas
-Docx export
-Page support
+-   Actual editors instead of textareas
+-   Page support
+-   Docx export

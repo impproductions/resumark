@@ -5,14 +5,14 @@
 }
 
 .markdowner-theme h1 {
-    font-size: 1.5em;
+    font-size: 1.7em;
     margin: 0.5em 0;
     margin-bottom: 0.2em;
     font-weight: bold;
 }
 
 .markdowner-theme h2 {
-    font-size: 1.4em;
+    font-size: 1.6em;
     margin: 0.5em 0;
     margin-bottom: 0.2em;
     font-weight: bold;
@@ -46,6 +46,14 @@
     font-weight: bold;
 }
 
+.markdowner-theme hr {
+    width: 90%;
+    height: 1px;
+    border: none;
+    background-color: #ccc;
+    padding: 0;
+    margin-top: 0.7rem;
+}
 .markdowner-theme p {
     margin: 0.3em 0;
     margin-bottom: 0.3em;
