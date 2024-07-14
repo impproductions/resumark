@@ -1,0 +1,142 @@
+.markdowner-theme {
+    --md-primary-color: #09ca29;
+    --md-primary-contrast: #ffffff;
+    --md-secondary-color: #333333;
+    --md-secondary-contrast: #ffffff;
+    --md-text-color: #09ca29;
+    --md-background-color: #242424;
+    --md-surface-color: #353535;
+    --md-shadow-color: rgba(0, 0, 0, 0.2);
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.3;
+    font-size: 0.6rem;
+    color: var(--md-text-color);
+    flex-flow: row-reverse;
+}
+
+.paper {
+    background-color: #242424;
+}
+
+.markdowner-theme .column:nth-of-type(2) {
+    background-color: var(--md-surface-color);
+    padding: 1rem;
+}
+
+.markdowner-theme h1 {
+    font-size: 2.5em;
+    margin: 0.5em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme h2 {
+    font-size: 2em;
+    margin: 0.4rem 0;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+}
+
+.markdowner-theme h3 {
+    font-size: 1.75em;
+    margin: 0.4em 0;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+    color: var(--md-primary-color);
+}
+
+.markdowner-theme h4 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme h5 {
+    font-size: 1.25em;
+    margin: 0.5em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme h6 {
+    font-size: 1em;
+    margin: 0.5em 0;
+    font-weight: bold;
+}
+
+.markdowner-theme hr {
+    width: 90%;
+    height: 1px;
+    border: none;
+    background-color: var(--md-primary-color);
+    padding: 0;
+    margin-top: 0.7rem;
+}
+
+.markdowner-theme p {
+    margin: 0.1rem 0;
+    margin-bottom: 0.1rem;
+}
+
+.markdowner-theme blockquote {
+    margin: 0.5em 0;
+    padding: 0.3em 0.6em;
+    border-left: 0.2em solid var(--md-primary-color);
+    background: var(--md-background-color);
+}
+
+.markdowner-theme ul,
+.markdowner-theme ol {
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+}
+
+.markdowner-theme li {
+    margin: 0.2em 0;
+}
+
+.markdowner-theme pre {
+    background: var(--md-background-color);
+    padding: 0.5em;
+    overflow: auto;
+    border-radius: 4px;
+}
+
+.markdowner-theme code {
+    font-family: inherit;
+    background: var(--md-background-color);
+    padding: 0.3em 0.3em;
+    border-radius: 4px;
+    border: 1px solid var(--md-primary-color);
+    line-height: 1.5rem;
+}
+
+.markdowner-theme a {
+    color: var(--md-primary-color);
+    text-decoration: none;
+}
+
+.markdowner-theme img {
+    max-width: 100%;
+    height: auto;
+}
+
+.markdowner-theme table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.5em 0;
+}
+
+.markdowner-theme th,
+.markdowner-theme td {
+    border: 1px solid var(--md-shadow-color);
+    padding: 0.3em 0.5em;
+    text-align: left;
+}
+
+.markdowner-theme .level-bar {
+    color: var(--md-primary-color);
+}
+
+.markdowner-theme .space-between :nth-child(2) {
+    color: var(--md-primary-color);
+    margin-right: 1rem;
+}

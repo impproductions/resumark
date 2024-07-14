@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import style from './PageRenderer.module.scss';
 import { useBoxSize } from '../../../hooks/useBoxSize';
+import classNames from 'classnames';
 
 interface Props {
     fitIntoPx: number;
@@ -20,7 +21,7 @@ export function PageRenderer({ fitIntoPx, children, maxScale = 1 }: Props) {
 
     return (
         <div
-            className={style.a4}
+            className={classNames(style.a4, 'paper')}
             ref={previewRef}
             style={{
                 transform: `scale(${previewScale})`,

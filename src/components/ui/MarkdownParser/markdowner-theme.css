@@ -8,13 +8,13 @@
     justify-content: flex-start;
 }
 
-.markdowner-theme .align-right {
-    text-align: right;
-}
-
 .markdowner-theme .space-between {
     display: flex;
     justify-content: space-between;
+}
+
+.markdowner-theme .send-right {
+    text-align: right;
 }
 
 .markdowner-theme .vertical-spacer-min {

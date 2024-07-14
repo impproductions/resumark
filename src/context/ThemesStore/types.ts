@@ -20,7 +20,7 @@ export interface ThemeStore {
 export interface ThemeStoreContextType {
     store: ThemeStore;
     availableThemes: string[];
-    addTheme: (theme: ThemeCreationPayload) => void;
+    addTheme: (theme: ThemeCreationPayload) => string | null;
     removeTheme: (themeId: string) => void;
     updateTheme: (theme: ThemeDefinition) => void;
     updateThemeName: (themeId: string, newName: string) => void;

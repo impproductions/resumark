@@ -42,7 +42,7 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
     const addTheme = (theme: ThemeCreationPayload) => {
         if (storeWithDefaults.themes.find((t) => t.name === theme.name)) {
             alert('Theme with this name already exists');
-            return;
+            return null; // FIXME
         }
 
         const newTheme: ThemeDefinition = {
@@ -52,12 +52,14 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
             tags: [],
             lastUpdated: dayjs().toISOString(),
             lastSeen: dayjs().toISOString(),
-            hash: hash(theme.css),
+            hash: hash(theme.css + theme.name),
         };
 
         setStore({
             themes: [...store.themes, newTheme],
         });
+
+        return newTheme.id;
     };
 
     const removeTheme = (themeId: string) => {
@@ -85,7 +87,7 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
         }
 
         theme.lastUpdated = dayjs().toISOString();
-        theme.hash = hash(theme.css);
+        theme.hash = hash(theme.css + theme.name);
 
         setStore({
             themes: store.themes.map((t) =>
@@ -95,7 +97,6 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
     };
 
     const updateThemeName = (themeId: string, newName: string) => {
-        throw new Error('Function not implemented.');
         if (defaultThemes.find((t) => t.name === newName)) {
             alert('Cannot update default themes');
             return;
@@ -108,9 +109,21 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
             alert('Theme with this name already exists');
             return;
         }
+
+        const currentTheme = getThemeById(themeId)!;
+
+        const hashValue = hash(currentTheme.css + newName);
+        const lastUpdated = dayjs().toISOString();
+
         setStore({
             themes: store.themes.map((t) =>
-                t.id === themeId ? { ...t, name: newName } : t
+                t.id === themeId
+                    ? {
+                          ...t,
+                          hash: hashValue,
+                          lastUpdated,
+                      }
+                    : t
             ),
         });
     };
@@ -125,7 +138,9 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
             return;
         }
 
-        const hashValue = hash(newContent);
+        const currentTheme = getThemeById(themeId)!;
+
+        const hashValue = hash(newContent + currentTheme.name);
         const lastUpdated = dayjs().toISOString();
 
         setStore({

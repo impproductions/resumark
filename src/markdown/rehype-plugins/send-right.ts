@@ -11,7 +11,7 @@ export const remarkAlignRight = () => {
                     lastChild.value.startsWith('->')
                 ) {
                     lastChild.value = lastChild.value.slice(2);
-                    node.data = { hProperties: { className: 'align-right' } };
+                    node.data = { hProperties: { className: 'send-right' } };
                 }
             }
         });

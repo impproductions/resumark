@@ -42,10 +42,18 @@ export function ThemeCarousel() {
             return;
         }
 
-        addTheme({
+        const newThemeId = addTheme({
             name: themeName,
             css: theme.css,
         });
+
+        if (newThemeId) {
+            setTheme({
+                id: newThemeId,
+                name: themeName,
+                css: theme.css,
+            });
+        }
     };
 
     const renameTheme = (themeId: string) => {
@@ -72,6 +80,14 @@ export function ThemeCarousel() {
         }
 
         removeTheme(themeId);
+
+        const firstTheme = store.themes[0];
+
+        setTheme({
+            id: firstTheme.id,
+            name: firstTheme.name,
+            css: firstTheme.css,
+        });
     };
 
     const updateStoredTheme = (themeId: string) => {
@@ -94,7 +110,7 @@ export function ThemeCarousel() {
                 return false;
             }
 
-            const editedThemeHash = hash(theme.css);
+            const editedThemeHash = hash(theme.css + theme.name);
             return editedThemeHash !== storedTheme.hash;
         },
         [getThemeById, theme]
