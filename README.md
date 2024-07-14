@@ -35,9 +35,10 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   Persistent editor settings ✅
 -   Actual editors instead of textareas ✅(?)
 -   Icon/Favicon ✅
--   Theme switcher
--   Save as... for theme
+-   Theme switcher ✅
+-   Save as... for theme ✅
 -   Multiple resumes
+-   Export/push themes
 -   CSS variables in markdowner-theme?
 -   Expose custom element styles in custom css
 -   Resume columns resize and styling
@@ -45,6 +46,10 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   Sandbox page preview
 -   Extend Monaco Markdown syntax highlighting with new elements
 -   Make page preview fit vertically
+-   CC: extract css element classes from index.css
+-   CC: refactor theme store
+-   CC: todos
+-   Use system settings for light/dark mode
 
 ### Features
 

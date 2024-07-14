@@ -36,7 +36,7 @@ export function EditorContent() {
                 <div className={style.previewTitle}>Preview</div>
                 <div className={style.previewContent}>
                     <PageRenderer fitIntoPx={fitIntoPx}>
-                        <MarkdownParser markdown={content} css={theme} />
+                        <MarkdownParser markdown={content} css={theme.css} />
                     </PageRenderer>
                 </div>
             </div>

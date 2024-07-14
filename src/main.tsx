@@ -5,13 +5,16 @@ import './variables.css';
 import './index.css';
 import { EditorProvider } from './context/Editor/provider.tsx';
 import { ResumeProvider } from './context/Resume/provider.tsx';
+import { ThemeStoreProvider } from './context/ThemesStore/provider.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <EditorProvider>
-            <ResumeProvider>
-                <App />
-            </ResumeProvider>
+            <ThemeStoreProvider>
+                <ResumeProvider>
+                    <App />
+                </ResumeProvider>
+            </ThemeStoreProvider>
         </EditorProvider>
     </React.StrictMode>
 );

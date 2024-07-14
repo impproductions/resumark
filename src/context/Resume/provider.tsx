@@ -1,14 +1,13 @@
 // ResumeProvider.tsx
 import { useState, ReactNode, FC, createContext } from 'react';
-import { ResumeContextType, ResumeData } from './types';
-
-import defaultCss from './default-user-theme.css?raw';
+import { ResumeContextType, ResumeData, ThemeData } from './types';
+import { useThemeStore } from '../ThemesStore/hook';
 
 export const ResumeContext = createContext<ResumeContextType | undefined>(
     undefined
 );
 
-// TODO: hook
+// TODO: use hook
 const updateLocalStorage = (resumeData: ResumeData) => {
     localStorage.setItem(
         'resumark.state.resume.data',
@@ -24,17 +23,31 @@ const getLocalStorage = (): ResumeData | null => {
 
     const parsedData = JSON.parse(data);
 
-    console.warn('Overriding localStorage theme data with default data');
-    parsedData.theme = String(defaultCss);
-
     return parsedData;
 };
 
+const DEFAULT_RESUME_DATA: ResumeData = {
+    content: '',
+    theme: {
+        id: 'default',
+        name: 'Default',
+        css: '',
+    },
+};
+
 export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
+    const { getThemeByName } = useThemeStore();
+
+    const defaultTheme = getThemeByName('default') || DEFAULT_RESUME_DATA.theme;
+
     const [data, setData] = useState<ResumeData>(
         getLocalStorage() || {
-            content: '',
-            theme: String(defaultCss),
+            ...DEFAULT_RESUME_DATA,
+            theme: {
+                css: defaultTheme.css,
+                id: defaultTheme.id,
+                name: defaultTheme.name,
+            },
         }
     );
 
@@ -50,7 +63,7 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
         });
     };
 
-    const setTheme = (theme: string) => {
+    const setTheme = (theme: ThemeData) => {
         setDataWrapper({
             ...data,
             theme,

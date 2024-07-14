@@ -58,8 +58,43 @@ button:hover {
     box-shadow: 0rem 0rem 0.5rem 0rem var(--color-primary-highlight);
 }
 
+button.filled {
+    background-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+    border-color: var(--color-primary-highlight);
+}
+button.filled:hover {
+    background-color: var(--color-secondary);
+}
+button.filled:active {
+    background-color: var(--color-secondary-highlight);
+}
+
 button[aria-selected='true'] {
     border-color: var(--color-primary-highlight);
     background-color: var(--color-primary);
     color: var(--color-primary-contrast);
+}
+
+input {
+    border-radius: 8px;
+    border: 1px solid var(--color-surface-4);
+    outline: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--color-surface-1);
+    color: var(--color-contrast-higher);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+input:hover {
+    border-color: var(--color-primary-highlight);
+    box-shadow: 0rem 0rem 0.5rem 0rem var(--color-primary-highlight);
+}
+
+input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0rem 0rem 0.5rem 0rem var(--color-primary-highlight);
 }

@@ -6,6 +6,7 @@ import { useWindowSize } from '../../../hooks/useWindowSize';
 import { PageRenderer } from '../../ui/PageRenderer';
 import { MarkdownParser } from '../../ui/MarkdownParser';
 import { CodeEditor } from '../../ui/CodeEditor';
+import { ThemeCarousel } from './ThemeCarousel';
 
 export function EditorPreview() {
     const { content, theme, setTheme } = useResumeState();
@@ -27,13 +28,28 @@ export function EditorPreview() {
 
     return (
         <div className={style.container}>
-            <div className={style.cssContainer} ref={containerRef}>
-                <CodeEditor text={theme} onChange={setTheme} language={'css'} />
+            <div className={style.header}>
+                <ThemeCarousel />
             </div>
-            <div className={style.previewContainer} ref={containerRef}>
-                <PageRenderer fitIntoPx={fitIntoPx} maxScale={1}>
-                    <MarkdownParser markdown={content} css={theme} />
-                </PageRenderer>
+            <div className={style.content}>
+                <div className={style.cssContainer}>
+                    <CodeEditor
+                        text={theme.css}
+                        onChange={(val) =>
+                            setTheme({
+                                // TODO: only the actual string?
+                                ...theme,
+                                css: val,
+                            })
+                        }
+                        language={'css'}
+                    />
+                </div>
+                <div className={style.previewContainer} ref={containerRef}>
+                    <PageRenderer fitIntoPx={fitIntoPx} maxScale={1}>
+                        <MarkdownParser markdown={content} css={theme.css} />
+                    </PageRenderer>
+                </div>
             </div>
         </div>
     );

@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-controls {
+    display: flex;
+    gap: 0.5rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-right: 0;
+}
+
+.carousel {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.update-theme-icon {
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
