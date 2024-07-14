@@ -11,6 +11,10 @@ import './markdowner-theme.css';
 import { remarkAlignRight } from '../../../markdown/rehype-plugins/send-right';
 import { remarkLevelBar } from '../../../markdown/rehype-plugins/level-bar';
 
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// import 'css.gg/icons/icons.css';
+
 interface Props {
     markdown: string;
     css: string;
@@ -48,6 +52,7 @@ export function MarkdownParser({ markdown, css }: Props) {
 
         processAllColumns();
     }, [markdown]);
+
     return (
         // TODO: security issue?
         <div className={style.previewReset}>
@@ -60,7 +65,6 @@ export function MarkdownParser({ markdown, css }: Props) {
                         dangerouslySetInnerHTML={{ __html: column }}
                     />
                 ))}
-                {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
             </div>
         </div>
     );

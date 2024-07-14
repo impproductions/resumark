@@ -5,6 +5,7 @@ import { useBoxSize as useBoxSize } from '../../../hooks/useBoxSize';
 import { useWindowSize } from '../../../hooks/useWindowSize';
 import { PageRenderer } from '../../ui/PageRenderer';
 import { MarkdownParser } from '../../ui/MarkdownParser';
+import { CodeEditor } from '../../ui/CodeEditor';
 
 export function EditorPreview() {
     const { content, theme, setTheme } = useResumeState();
@@ -27,11 +28,7 @@ export function EditorPreview() {
     return (
         <div className={style.container}>
             <div className={style.cssContainer} ref={containerRef}>
-                <textarea
-                    className={style.textarea}
-                    value={theme}
-                    onChange={(e) => setTheme(e.target.value)}
-                />
+                <CodeEditor text={theme} onChange={setTheme} />
             </div>
             <div className={style.previewContainer} ref={containerRef}>
                 <PageRenderer fitIntoPx={fitIntoPx} maxScale={-1}>

@@ -11,7 +11,9 @@
     "component": "bun ./utils/add-component.ts"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.11.3",
     "classnames": "^2.5.1",
+    "feather-icons": "^4.29.2",
     "lodash": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

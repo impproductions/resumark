@@ -7,7 +7,6 @@ export const remarkLevelBar = () => {
             // TODO allow escaping
             const matches = node.value.match(/^\{\+[0-5]{1}\}/);
             if (matches) {
-                console.log({ matches });
                 node.value = node.value.replace(matches[0], '').trim();
                 const stars = parseInt(matches[0].slice(2));
                 const emptyStars = 5 - stars;
@@ -41,17 +40,17 @@ export const remarkLevelBar = () => {
                             children: [
                                 ...new Array(stars).fill({
                                     type: 'element',
-                                    tagName: 'div',
+                                    tagName: 'i',
                                     properties: {
-                                        className: 'shp-circle-full',
+                                        className: 'bi bi-circle-fill',
                                     },
                                     children: [],
                                 }),
                                 ...new Array(emptyStars).fill({
                                     type: 'element',
-                                    tagName: 'div',
+                                    tagName: 'i',
                                     properties: {
-                                        className: 'shp-circle-empty',
+                                        className: 'bi bi-circle',
                                     },
                                     children: [],
                                 }),

@@ -29,7 +29,7 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 
 ### In progress
 
--   CSS editor
+-   CSS editor ✅
 -   Icons
 -   Vertical Spacer
 -   Columns resize and styling

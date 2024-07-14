@@ -4,6 +4,7 @@ import { PageRenderer } from '../../ui/PageRenderer';
 import { useEffect, useRef, useState } from 'react';
 import { useWindowSize } from '../../../hooks/useWindowSize';
 import { MarkdownParser } from '../../ui/MarkdownParser';
+import { CodeEditor } from '../../ui/CodeEditor';
 
 export function EditorContent() {
     const { content, setContent, theme } = useResumeState();
@@ -24,12 +25,11 @@ export function EditorContent() {
     return (
         <div className={style.container}>
             <div className={style.editor}>
-                <textarea
-                    className={style.textarea}
-                    placeholder="Start typing your markdown here..."
-                    onChange={(e) => setContent(e.target.value)}
-                    value={content}
-                ></textarea>
+                <CodeEditor
+                    text={content}
+                    onChange={setContent}
+                    onCommit={setContent}
+                />
             </div>
             <div className={style.preview} ref={previewColumnRef}>
                 <div className={style.previewTitle}>Preview</div>

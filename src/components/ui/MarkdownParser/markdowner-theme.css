@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     gap: 0.1em;
+    font-size: 0.5rem;
 }
 
 .markdowner-theme .level-bar-container {
@@ -24,19 +25,4 @@
     justify-content: space-between;
     width: 40%;
     gap: 0.4em;
-}
-
-.markdowner-theme .shp-circle-full {
-    border-radius: 50%;
-    background-color: #535bf2;
-    border: 1px solid #535bf2;
-    width: 0.4rem;
-    height: 0.4rem;
-}
-
-.markdowner-theme .shp-circle-empty {
-    border-radius: 50%;
-    border: 1px solid #535bf2;
-    width: 0.4rem;
-    height: 0.4rem;
 }
