@@ -63,6 +63,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
+    width: 100%;
     gap: 0.4em;
 }

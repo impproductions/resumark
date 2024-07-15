@@ -2,32 +2,15 @@
 import { useState, ReactNode, FC, createContext } from 'react';
 import { ResumeContextType, ResumeData, ThemeData } from './types';
 import { useThemeStore } from '../ThemesStore/hook';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import placeholderResume from '../../assets/placeholder-resume.md?raw';
 
 export const ResumeContext = createContext<ResumeContextType | undefined>(
     undefined
 );
 
-// TODO: use hook
-const updateLocalStorage = (resumeData: ResumeData) => {
-    localStorage.setItem(
-        'resumark.state.resume.data',
-        JSON.stringify(resumeData)
-    );
-};
-
-const getLocalStorage = (): ResumeData | null => {
-    const data = localStorage.getItem('resumark.state.resume.data');
-    if (!data) {
-        return null;
-    }
-
-    const parsedData = JSON.parse(data);
-
-    return parsedData;
-};
-
 const DEFAULT_RESUME_DATA: ResumeData = {
-    content: '',
+    content: placeholderResume,
     theme: {
         id: 'default',
         name: 'Default',
@@ -37,11 +20,12 @@ const DEFAULT_RESUME_DATA: ResumeData = {
 
 export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const { getThemeByName } = useThemeStore();
+    const { getLocalStorage, updateLocalStorage } = useLocalStorage();
 
     const defaultTheme = getThemeByName('default') || DEFAULT_RESUME_DATA.theme;
 
     const [data, setData] = useState<ResumeData>(
-        getLocalStorage() || {
+        getLocalStorage('resumark.state.resume.data') || {
             ...DEFAULT_RESUME_DATA,
             theme: {
                 css: defaultTheme.css,
@@ -53,7 +37,7 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
     const setDataWrapper = (newData: ResumeData) => {
         setData(newData);
-        updateLocalStorage(newData);
+        updateLocalStorage(newData, 'resumark.state.resume.data');
     };
 
     const setContent = (content: string) => {
