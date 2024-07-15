@@ -57,6 +57,12 @@ button:hover {
     border-color: var(--color-primary-highlight);
     box-shadow: 0rem 0rem 0.5rem 0rem var(--color-primary-highlight);
 }
+button:active {
+    color: var(--color-text);
+    border-color: var(--color-primary-highlight);
+    background-color: var(--color-primary-highlight);
+    box-shadow: 0rem 0rem 0.5rem 0rem var(--color-primary-highlight);
+}
 
 button.filled {
     background-color: var(--color-primary);
@@ -68,6 +74,16 @@ button.filled:hover {
 }
 button.filled:active {
     background-color: var(--color-secondary-highlight);
+}
+
+button.outlined {
+    border-color: var(--color-primary-highlight);
+    color: var(--color-primary);
+}
+button.outlined:hover {
+}
+button.outlined:active {
+    color: var(--color-text);
 }
 
 button[aria-selected='true'] {

@@ -172,6 +172,7 @@ export function ThemeCarousel() {
                     {displayedThemes.map((t) => (
                         <button
                             key={t.id}
+                            className="outlined"
                             onClick={() => handleThemeButtonClick(t)}
                             onDoubleClick={() => renameTheme(t.id)}
                             onContextMenu={(e) => {

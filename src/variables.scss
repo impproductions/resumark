@@ -3,12 +3,4 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
-$layout-max-width-sm: 100%;
-$layout-max-width-md: $breakpoint-lg;
-$layout-max-width-lg: $breakpoint-xl;
-$layout-max-width-xl: 80%;
-
-$layout-width-sm: 100%;
-$layout-width-md: 90%;
-$layout-width-lg: 80%;
-$layout-width-xl: 80%;
+$layout-padding: 5rem;

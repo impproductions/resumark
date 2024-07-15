@@ -9,6 +9,14 @@ export const EditorContext = createContext<EditorContextType | undefined>(
 
 const DEFAULT_CONFIG: EditorConfig = {
     theme: 'light',
+    layout: {
+        content: {
+            columnDividerPercentage: 60,
+        },
+        preview: {
+            columnDividerPercentage: 40,
+        },
+    },
 };
 
 const DEFAULT_STATE: EditorState = {

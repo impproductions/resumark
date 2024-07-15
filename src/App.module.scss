@@ -18,25 +18,25 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: $layout-width-sm;
-    max-width: $layout-max-width-sm;
+    width: 100%;
+    max-width: 100%;
     height: 100vh;
     overflow: hidden;
     background-color: var(--color-bg);
 
     @media screen and (min-width: $breakpoint-md) {
-        width: $layout-width-md;
-        max-width: $layout-max-width-md;
+        width: 100%;
+        max-width: calc(100% - 2 * $layout-padding);
     }
 
     @media screen and (min-width: $breakpoint-lg) {
-        width: $layout-width-lg;
-        max-width: $layout-max-width-lg;
+        width: 100%;
+        max-width: calc(100% - 2 * $layout-padding);
     }
 
     @media screen and (min-width: $breakpoint-xl) {
-        width: $layout-width-xl;
-        max-width: $layout-max-width-xl;
+        width: 100%;
+        max-width: calc(100% - 2 * $layout-padding);
     }
 }
 

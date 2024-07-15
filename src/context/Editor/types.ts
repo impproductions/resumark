@@ -1,5 +1,15 @@
+export interface LayoutConfig {
+    columnDividerPercentage: number;
+}
+
+export interface EditorLayoutConfig {
+    content: LayoutConfig;
+    preview: LayoutConfig;
+}
+
 export interface EditorConfig {
     theme: 'light' | 'dark';
+    layout: EditorLayoutConfig;
 }
 export interface EditorState {
     currentView: 'content' | 'preview';

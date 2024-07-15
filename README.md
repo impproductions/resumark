@@ -39,13 +39,17 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   Save as... for theme ✅
 -   Select theme at startup ✅
 -   Select newly added theme ✅
+-   Editor columns resizing
+-   Theme store tooltip
+-   Syntax reference tooltip
+-   Sandbox page preview (research)
 -   Multiple resumes
 -   Export/push themes
+-   CV columns resize and styling
 -   CSS variables in markdowner-theme? ✅
 -   Expose custom element styles in custom css ✅
--   CV columns resize and styling
+-   Sandbox page preview (do)
 -   Allow escaping custom symbols
--   Sandbox page preview
 -   Extend Monaco Markdown syntax highlighting with new elements
 -   Make page preview fit vertically
 -   CC: extract css element classes from index.css

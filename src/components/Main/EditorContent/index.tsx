@@ -33,7 +33,6 @@ export function EditorContent() {
                 />
             </div>
             <div className={style.preview} ref={previewColumnRef}>
-                <div className={style.previewTitle}>Preview</div>
                 <div className={style.previewContent}>
                     <PageRenderer fitIntoPx={fitIntoPx}>
                         <MarkdownParser markdown={content} css={theme.css} />

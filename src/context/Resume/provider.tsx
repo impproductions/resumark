@@ -3,7 +3,7 @@ import { useState, ReactNode, FC, createContext } from 'react';
 import { ResumeContextType, ResumeData, ThemeData } from './types';
 import { useThemeStore } from '../ThemesStore/hook';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
-import placeholderResume from '../../assets/placeholder-resume.md?raw';
+import placeholderResume from '../../assets/placeholder-resume.rmd?raw';
 
 export const ResumeContext = createContext<ResumeContextType | undefined>(
     undefined
