@@ -1,5 +1,17 @@
-.markdowner-theme {
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--md-background-color);
+    padding: 10mm;
+    box-sizing: border-box;
     font-size: 8pt;
+    height: 100%;
+    width: 100%;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
 }
 
 .column {
@@ -8,57 +20,57 @@
     justify-content: flex-start;
 }
 
-.markdowner-theme .space-between {
+.space-between {
     display: flex;
     justify-content: space-between;
 }
 
-.markdowner-theme .send-right {
+.send-right {
     text-align: right;
 }
 
-.markdowner-theme .vertical-spacer-min {
+.vertical-spacer-min {
     height: 3%;
 }
-.markdowner-theme .vertical-spacer-1 {
+.vertical-spacer-1 {
     height: 10%;
 }
-.markdowner-theme .vertical-spacer-2 {
+.vertical-spacer-2 {
     height: 20%;
 }
-.markdowner-theme .vertical-spacer-3 {
+.vertical-spacer-3 {
     height: 30%;
 }
-.markdowner-theme .vertical-spacer-4 {
+.vertical-spacer-4 {
     height: 40%;
 }
-.markdowner-theme .vertical-spacer-5 {
+.vertical-spacer-5 {
     height: 50%;
 }
-.markdowner-theme .vertical-spacer-6 {
+.vertical-spacer-6 {
     height: 60%;
 }
-.markdowner-theme .vertical-spacer-7 {
+.vertical-spacer-7 {
     height: 70%;
 }
-.markdowner-theme .vertical-spacer-8 {
+.vertical-spacer-8 {
     height: 80%;
 }
-.markdowner-theme .vertical-spacer-9 {
+.vertical-spacer-9 {
     height: 90%;
 }
-.markdowner-theme .vertical-spacer-full {
+.vertical-spacer-full {
     height: 100%;
 }
 
-.markdowner-theme .level-bar {
+.level-bar {
     display: flex;
     align-items: center;
     gap: 0.1em;
     font-size: 0.5rem;
 }
 
-.markdowner-theme .level-bar-container {
+.level-bar-container {
     display: flex;
     flex-direction: row;
     align-items: center;

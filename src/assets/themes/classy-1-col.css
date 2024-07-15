@@ -1,4 +1,4 @@
-.markdowner-theme {
+:root {
     --md-primary-color: #381c00;
     --md-primary-contrast: #fff;
     --md-secondary-color: #c3c3c3;
@@ -11,27 +11,27 @@
     text-align: center;
 }
 
-.markdowner-theme {
+body {
     font-family: Lora, Helvetica;
     line-height: 1.4;
     color: var(--md-text-color);
 }
 
-.markdowner-theme h1 {
+h1 {
     font-size: 1.7em;
     margin: 0.5em 0;
     margin-bottom: 0.2em;
     font-weight: bold;
 }
 
-.markdowner-theme h2 {
+h2 {
     font-size: 1.6em;
     margin: 0.5em 0;
     margin-bottom: 0.2em;
     font-weight: bold;
 }
 
-.markdowner-theme h3 {
+h3 {
     font-size: 1.3em;
     margin: 0.5em 0;
     margin-bottom: 0.2em;
@@ -39,28 +39,28 @@
     color: var(--md-primary-color);
 }
 
-.markdowner-theme h4 {
+h4 {
     font-size: 1.2em;
     margin: 0.5em 0;
     margin-bottom: 0.2em;
     font-weight: bold;
 }
 
-.markdowner-theme h5 {
+h5 {
     font-size: 1.1em;
     margin: 0.5em 0;
     margin-bottom: 0.2em;
     font-weight: bold;
 }
 
-.markdowner-theme h6 {
+h6 {
     font-size: 1em;
     margin: 0.5em 0;
     margin-bottom: 0.2em;
     font-weight: bold;
 }
 
-.markdowner-theme hr {
+hr {
     width: 90%;
     height: 1px;
     border: none;
@@ -68,37 +68,37 @@
     padding: 0;
     margin-top: 0.7rem;
 }
-.markdowner-theme p {
+p {
     margin: 0.1rem 0;
     margin-bottom: 0.1rem;
 }
 
-.markdowner-theme blockquote {
+blockquote {
     margin: 0.5em 0;
     padding: 0.3em 0.6em;
     border-left: 0.2em solid var(--md-primary-color);
     background: var(--md-background-color);
 }
 
-.markdowner-theme ul,
-.markdowner-theme ol {
+ul,
+ol {
     padding-left: 1.5em;
     margin: 0.5em 0;
     list-style-type: none;
 }
 
-.markdowner-theme li {
+li {
     margin: 0.2em 0;
 }
 
-.markdowner-theme pre {
+pre {
     background: var(--md-background-color);
     padding: 0.5em;
     overflow: auto;
     border-radius: 4px;
 }
 
-.markdowner-theme code {
+code {
     font-family: inherit;
     background: var(--md-background-color);
     padding: 0.3em 0.3em;
@@ -107,29 +107,29 @@
     line-height: 1.5rem;
 }
 
-.markdowner-theme a {
+a {
     color: var(--md-primary-color);
     text-decoration: none;
 }
 
-.markdowner-theme img {
+img {
     max-width: 100%;
     height: auto;
 }
 
-.markdowner-theme table {
+table {
     border-collapse: collapse;
     width: 100%;
     margin: 0.5em 0;
 }
 
-.markdowner-theme th,
-.markdowner-theme td {
+th,
+td {
     border: 1px solid var(--md-shadow-color);
     padding: 0.3em 0.5em;
     text-align: left;
 }
 
-.markdowner-theme .level-bar {
+.level-bar {
     color: var(--md-primary-color);
 }

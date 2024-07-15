@@ -23,7 +23,7 @@ export function EditorPreview() {
         }
 
         const containerWidth = container.clientWidth;
-        setFitIntoPx(containerWidth);
+        setFitIntoPx(containerWidth - 20);
     }, [boxSize, windowSize.width]);
 
     return (
@@ -46,7 +46,7 @@ export function EditorPreview() {
                     />
                 </div>
                 <div className={style.previewContainer} ref={containerRef}>
-                    <PageRenderer fitIntoPx={fitIntoPx} maxScale={1}>
+                    <PageRenderer fitIntoPx={fitIntoPx} maxScale={-1}>
                         <MarkdownParser markdown={content} css={theme.css} />
                     </PageRenderer>
                 </div>

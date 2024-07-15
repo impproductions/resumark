@@ -39,10 +39,9 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   Save as... for theme ✅
 -   Select theme at startup ✅
 -   Select newly added theme ✅
--   Editor columns resizing
+-   Sandbox page preview (research)
 -   Theme store tooltip
 -   Syntax reference tooltip
--   Sandbox page preview (research)
 -   Multiple resumes
 -   Export/push themes
 -   CV columns resize and styling

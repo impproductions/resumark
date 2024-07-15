@@ -53,6 +53,5 @@
     align-items: center;
     width: 100%;
     height: calc(100vh - var(--navbar-height));
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
 }
