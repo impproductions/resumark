@@ -68,6 +68,14 @@ export function ThemeCarousel() {
         }
 
         updateThemeName(themeId, themeName);
+
+        if (themeId === theme.id) {
+            setTheme({
+                id: themeId,
+                name: themeName,
+                css: theme.css,
+            });
+        }
     };
 
     const deleteTheme = (themeId: string) => {

@@ -1,0 +1,135 @@
+.markdowner-theme {
+    --md-primary-color: #381c00;
+    --md-primary-contrast: #fff;
+    --md-secondary-color: #c3c3c3;
+    --md-secondary-contrast: #333;
+    --md-text-color: #333;
+    --md-background-color: #fff;
+    --md-surface-color: #f5f5f5;
+    --md-shadow-color: rgba(0, 0, 0, 0.3);
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+.markdowner-theme {
+    font-family: Lora, Helvetica;
+    line-height: 1.4;
+    color: var(--md-text-color);
+}
+
+.markdowner-theme h1 {
+    font-size: 1.7em;
+    margin: 0.5em 0;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
+
+.markdowner-theme h2 {
+    font-size: 1.6em;
+    margin: 0.5em 0;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
+
+.markdowner-theme h3 {
+    font-size: 1.3em;
+    margin: 0.5em 0;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+    color: var(--md-primary-color);
+}
+
+.markdowner-theme h4 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
+
+.markdowner-theme h5 {
+    font-size: 1.1em;
+    margin: 0.5em 0;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
+
+.markdowner-theme h6 {
+    font-size: 1em;
+    margin: 0.5em 0;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
+
+.markdowner-theme hr {
+    width: 90%;
+    height: 1px;
+    border: none;
+    background-color: var(--md-shadow-color);
+    padding: 0;
+    margin-top: 0.7rem;
+}
+.markdowner-theme p {
+    margin: 0.1rem 0;
+    margin-bottom: 0.1rem;
+}
+
+.markdowner-theme blockquote {
+    margin: 0.5em 0;
+    padding: 0.3em 0.6em;
+    border-left: 0.2em solid var(--md-primary-color);
+    background: var(--md-background-color);
+}
+
+.markdowner-theme ul,
+.markdowner-theme ol {
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+    list-style-type: none;
+}
+
+.markdowner-theme li {
+    margin: 0.2em 0;
+}
+
+.markdowner-theme pre {
+    background: var(--md-background-color);
+    padding: 0.5em;
+    overflow: auto;
+    border-radius: 4px;
+}
+
+.markdowner-theme code {
+    font-family: inherit;
+    background: var(--md-background-color);
+    padding: 0.3em 0.3em;
+    border-radius: 4px;
+    border: 1px solid var(--md-primary-color);
+    line-height: 1.5rem;
+}
+
+.markdowner-theme a {
+    color: var(--md-primary-color);
+    text-decoration: none;
+}
+
+.markdowner-theme img {
+    max-width: 100%;
+    height: auto;
+}
+
+.markdowner-theme table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.5em 0;
+}
+
+.markdowner-theme th,
+.markdowner-theme td {
+    border: 1px solid var(--md-shadow-color);
+    padding: 0.3em 0.5em;
+    text-align: left;
+}
+
+.markdowner-theme .level-bar {
+    color: var(--md-primary-color);
+}

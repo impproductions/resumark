@@ -2,6 +2,7 @@ import { hash } from '../../lib/crypto';
 import themeDefault from '../../assets/themes/default.css?raw';
 import themeBasicBitch from '../../assets/themes/basic-bitch.css?raw';
 import themeRetro from '../../assets/themes/retro.css?raw';
+import themeClassy1Col from '../../assets/themes/classy-1-col.css?raw';
 import { ThemeDefinition } from './types';
 
 export const defaultThemes: ThemeDefinition[] = [
@@ -31,5 +32,14 @@ export const defaultThemes: ThemeDefinition[] = [
         lastUpdated: '2024-07-14T18:34:28Z',
         lastSeen: '2024-07-14T18:34:28Z',
         hash: hash(themeRetro + 'Retro'),
+    },
+    {
+        id: '7fb4d3d0-7a89-525e-b196-df844e85df44',
+        name: 'Classy',
+        css: themeClassy1Col,
+        tags: ['default', 'simple', 'clean', 'minimal', 'modern'],
+        lastUpdated: '2024-07-14T18:34:28Z',
+        lastSeen: '2024-07-14T18:34:28Z',
+        hash: hash(themeClassy1Col + 'Classy'),
     },
 ];

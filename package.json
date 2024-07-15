@@ -23,6 +23,7 @@
     "remark-gfm": "^4.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
+    "typeface-lora": "^1.1.13",
     "typeface-roboto": "^1.1.13",
     "unified": "^11.0.5",
     "uuid4": "^2.0.3"

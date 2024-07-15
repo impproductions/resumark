@@ -120,6 +120,7 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
                 t.id === themeId
                     ? {
                           ...t,
+                          name: newName,
                           hash: hashValue,
                           lastUpdated,
                       }
