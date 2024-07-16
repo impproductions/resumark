@@ -33,21 +33,21 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   Icons ✅
 -   Vertical Spacer ✅
 -   Persistent editor settings ✅
--   Actual editors instead of textareas ✅(?)
+-   Actual editors instead of textareas ✅
 -   Icon/Favicon ✅
 -   Theme switcher ✅
 -   Save as... for theme ✅
 -   Select theme at startup ✅
 -   Select newly added theme ✅
--   Sandbox page preview (research)
+-   CV section resize and styling ✅
+-   Theme metadata
+-   Sandbox page preview ✅
 -   Theme store tooltip
 -   Syntax reference tooltip
 -   Multiple resumes
 -   Export/push themes
--   CV columns resize and styling
 -   CSS variables in markdowner-theme? ✅
 -   Expose custom element styles in custom css ✅
--   Sandbox page preview (do)
 -   Allow escaping custom symbols
 -   Extend Monaco Markdown syntax highlighting with new elements
 -   Make page preview fit vertically
