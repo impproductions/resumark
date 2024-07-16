@@ -2,7 +2,7 @@ import { hash } from '../../lib/crypto';
 import themeDefault from '../../assets/themes/default.css?raw';
 import themeBasicBitch from '../../assets/themes/basic-bitch.css?raw';
 import themeRetro from '../../assets/themes/retro.css?raw';
-import themeClassy1Col from '../../assets/themes/classy-1-col.css?raw';
+import themeClassy1Col from '../../assets/themes/classy.css?raw';
 import { ThemeDefinition } from './types';
 
 export const defaultThemes: ThemeDefinition[] = [

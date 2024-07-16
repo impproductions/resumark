@@ -21,10 +21,10 @@ interface Props {
 }
 
 export function MarkdownParser({ markdown, css }: Props) {
-    const [columns, setColumns] = useState<string[]>([]);
+    const [sections, setSections] = useState<string[]>([]);
 
     useEffect(() => {
-        const splitColumns = markdown.split('|||||');
+        const splitSections = markdown.split('|||||');
 
         const processMarkdown = async (md: string) => {
             try {
@@ -44,18 +44,18 @@ export function MarkdownParser({ markdown, css }: Props) {
             }
         };
 
-        const processAllColumns = async () => {
-            const processedColumns = await Promise.all(
-                splitColumns.map(processMarkdown)
+        const processAllSections = async () => {
+            const processedSections = await Promise.all(
+                splitSections.map(processMarkdown)
             );
-            setColumns(processedColumns);
+            setSections(processedSections);
         };
 
-        processAllColumns();
+        processAllSections();
     }, [markdown]);
 
-    const html = columns
-        .map((column) => "<div class='column'>\n" + column + '</div>')
+    const html = sections
+        .map((section) => "<div class='section'>\n" + section + '</div>')
         .join('\n');
 
     return (

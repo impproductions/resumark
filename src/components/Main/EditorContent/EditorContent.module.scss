@@ -36,6 +36,8 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     @media screen and (min-width: $breakpoint-lg) {
         width: 40%;
