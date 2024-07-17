@@ -1,13 +1,12 @@
 import style from './EditorContent.module.scss';
 import { useResumeState } from '../../../context/Resume/hook';
-import { PageRenderer } from '../../ui/PageRenderer';
 import { useEffect, useRef, useState } from 'react';
 import { useWindowSize } from '../../../hooks/useWindowSize';
-import { MarkdownParser } from '../../ui/MarkdownParser';
 import { CodeEditor } from '../../ui/CodeEditor';
+import { ResumeRenderer } from '../ResumeRenderer';
 
 export function EditorContent() {
-    const { content, setContent, theme } = useResumeState();
+    const { content, setContent } = useResumeState();
     const { windowSize } = useWindowSize();
     const previewColumnRef = useRef<HTMLDivElement>(null);
     const [fitIntoPx, setFitIntoPx] = useState(0);
@@ -34,9 +33,10 @@ export function EditorContent() {
             </div>
             <div className={style.preview} ref={previewColumnRef}>
                 <div className={style.previewContent}>
-                    <PageRenderer fitIntoPx={fitIntoPx}>
+                    <ResumeRenderer fitIntoPx={fitIntoPx} />
+                    {/* <PageRenderer fitIntoPx={fitIntoPx}>
                         <MarkdownParser markdown={content} css={theme.css} />
-                    </PageRenderer>
+                    </PageRenderer> */}
                 </div>
             </div>
         </div>

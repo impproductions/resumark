@@ -42,7 +42,7 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
     const addTheme = (theme: ThemeCreationPayload) => {
         if (storeWithDefaults.themes.find((t) => t.name === theme.name)) {
             alert('Theme with this name already exists');
-            return null; // FIXME
+            return null; // FIXME move alerts outside of the provider
         }
 
         const newTheme: ThemeDefinition = {

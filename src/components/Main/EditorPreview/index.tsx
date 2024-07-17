@@ -3,13 +3,12 @@ import { useResumeState } from '../../../context/Resume/hook';
 import { useEffect, useRef, useState } from 'react';
 import { useBoxSize as useBoxSize } from '../../../hooks/useBoxSize';
 import { useWindowSize } from '../../../hooks/useWindowSize';
-import { PageRenderer } from '../../ui/PageRenderer';
-import { MarkdownParser } from '../../ui/MarkdownParser';
 import { CodeEditor } from '../../ui/CodeEditor';
 import { ThemeCarousel } from './ThemeCarousel';
+import { ResumeRenderer } from '../ResumeRenderer';
 
 export function EditorPreview() {
-    const { content, theme, setTheme } = useResumeState();
+    const { theme, setTheme } = useResumeState();
     const previewRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const { boxSize } = useBoxSize(previewRef);
@@ -46,9 +45,7 @@ export function EditorPreview() {
                     />
                 </div>
                 <div className={style.previewContainer} ref={containerRef}>
-                    <PageRenderer fitIntoPx={fitIntoPx} maxScale={-1}>
-                        <MarkdownParser markdown={content} css={theme.css} />
-                    </PageRenderer>
+                    <ResumeRenderer fitIntoPx={fitIntoPx} />
                 </div>
             </div>
         </div>

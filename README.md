@@ -40,7 +40,7 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   Select theme at startup ✅
 -   Select newly added theme ✅
 -   CV section resize and styling ✅
--   Theme metadata
+-   Theme metadata ✅
 -   Sandbox page preview ✅
 -   Theme store tooltip
 -   Syntax reference tooltip

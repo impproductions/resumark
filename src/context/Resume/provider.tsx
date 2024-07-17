@@ -1,9 +1,16 @@
 // ResumeProvider.tsx
 import { useState, ReactNode, FC, createContext } from 'react';
-import { ResumeContextType, ResumeData, ThemeData } from './types';
+import {
+    ResumeContextType,
+    ResumeData,
+    ThemeData,
+    ThemeMetadata,
+} from './types';
 import { useThemeStore } from '../ThemesStore/hook';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import placeholderResume from '../../assets/placeholder-resume.rmd?raw';
+import YAML from 'yaml';
+import { Err as Err, Ok as Ok, Validator } from '../../lib/validation';
 
 export const ResumeContext = createContext<ResumeContextType | undefined>(
     undefined
@@ -54,6 +61,37 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
         });
     };
 
+    const getThemeMetadata = () => {
+        try {
+            const metadata: ThemeMetadata = YAML.parse(
+                theme.css.split('/***metadata\n')[1].split('\n***/')[0]
+            );
+
+            if (!metadata) {
+                throw new Error('No metadata found');
+            }
+
+            const validator = new Validator<ThemeMetadata>(metadata, [
+                [
+                    (obj) => typeof obj.sections === 'number',
+                    '"sections" is not a number - try adding "sections: <number>" to your metadata',
+                ],
+            ]);
+
+            const [valid, errors] = validator.validate();
+
+            if (!valid) {
+                return Err<ThemeMetadata>(errors);
+            }
+
+            return Ok(metadata);
+        } catch (e) {
+            return Err<ThemeMetadata>([
+                'Metadata not found in CSS - try adding a metadata block: \n/***metadata\nsections: <number>\n***/',
+            ]);
+        }
+    };
+
     const content = data.content;
     const theme = data.theme;
 
@@ -64,6 +102,7 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
                 theme,
                 setContent,
                 setTheme,
+                getThemeMetadata,
             }}
         >
             {children}
