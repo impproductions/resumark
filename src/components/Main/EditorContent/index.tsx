@@ -34,9 +34,6 @@ export function EditorContent() {
             <div className={style.preview} ref={previewColumnRef}>
                 <div className={style.previewContent}>
                     <ResumeRenderer fitIntoPx={fitIntoPx} />
-                    {/* <PageRenderer fitIntoPx={fitIntoPx}>
-                        <MarkdownParser markdown={content} css={theme.css} />
-                    </PageRenderer> */}
                 </div>
             </div>
         </div>

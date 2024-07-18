@@ -63,15 +63,32 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
     const getThemeMetadata = () => {
         try {
-            const metadata: ThemeMetadata = YAML.parse(
-                theme.css.split('/***metadata\n')[1].split('\n***/')[0]
-            );
+            const metadataString = theme.css
+                .split('/***metadata')[1]
+                .split('***/')[0];
 
-            if (!metadata) {
-                throw new Error('No metadata found');
+            if (!metadataString.trim()) {
+                return Err<ThemeMetadata>([
+                    'Empty metadata block - try adding "sections: <number>" to your metadata',
+                ]);
             }
+            const metadata: ThemeMetadata = YAML.parse(metadataString);
+
+            console.log({
+                metadata,
+                type: typeof metadata,
+                sections: metadata.sections,
+            });
 
             const validator = new Validator<ThemeMetadata>(metadata, [
+                [
+                    (obj) => typeof obj === 'object',
+                    'Metadata is not an object - try adding "sections: <number>" to your metadata',
+                ],
+                [
+                    (obj) => Boolean(obj.sections),
+                    '"sections" is not defined - try adding "sections: <number>" to your metadata',
+                ],
                 [
                     (obj) => typeof obj.sections === 'number',
                     '"sections" is not a number - try adding "sections: <number>" to your metadata',

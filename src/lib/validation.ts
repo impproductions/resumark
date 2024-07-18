@@ -20,6 +20,8 @@ export class Validator<T> {
             }
         }
 
+        console.log({valid, errors});
+
         return [valid, errors];
     }
 

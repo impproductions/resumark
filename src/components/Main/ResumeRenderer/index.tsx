@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './ResumeRenderer.module.scss';
 import { useResumeState } from '../../../context/Resume/hook';
 import { PageRenderer } from '../../ui/PageRenderer';
@@ -28,7 +27,7 @@ export function ResumeRenderer({ fitIntoPx }: Props) {
         problems.push(
             `You are missing ${missingSections} section${
                 missingSections > 1 ? 's' : ''
-            } in your resume. Add more by inserting "|||||" between sections.`
+            } in your resume. Add more by inserting "|||||" between sections or try a different theme.`
         );
     }
 
@@ -37,9 +36,11 @@ export function ResumeRenderer({ fitIntoPx }: Props) {
     }
 
     return (
-        <PageRenderer fitIntoPx={fitIntoPx}>
-            <MarkdownParser markdown={content} css={theme.css} />
-        </PageRenderer>
+        <div className={style.container}>
+            <PageRenderer fitIntoPx={fitIntoPx}>
+                <MarkdownParser markdown={content} css={theme.css} />
+            </PageRenderer>
+        </div>
     );
 }
 
