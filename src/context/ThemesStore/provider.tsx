@@ -168,6 +168,10 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
         return storeWithDefaults.themes.find((t) => t.id === themeId);
     };
 
+    const isDefaultTheme = (themeId: string) => {
+        return !!defaultThemes.find((t) => t.id === themeId);
+    };
+
     return (
         <ThemeStoreContext.Provider
             value={{
@@ -182,6 +186,7 @@ export const ThemeStoreProvider: FC<{ children: ReactNode }> = ({
                 updateThemeContent,
                 getThemeByName,
                 getThemeById,
+                isDefaultTheme,
             }}
         >
             {children}

@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 0.5rem;
+}
+
+.carousel-controls {
+    display: flex;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding-right: 0;
+}
+
+.carousel-controls :first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    width: 10rem;
+}
+.carousel-controls :nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.update-theme-icon {
+    cursor: pointer;
+    margin-left: 0.5rem;
+}

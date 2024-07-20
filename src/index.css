@@ -51,6 +51,7 @@ button {
     background-color: transparent;
     cursor: pointer;
     color: var(--color-text);
+    white-space: nowrap;
     transition: border-color 0.35s ease, box-shadow 0.35s ease;
 }
 button:hover {

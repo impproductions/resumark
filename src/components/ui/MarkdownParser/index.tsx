@@ -173,9 +173,7 @@ export const IFrameSandbox = ({ html, css }: SandboxProps) => {
                 iframeRef.current.contentDocument ||
                 iframeRef.current.contentWindow?.document;
             if (iframeDoc) {
-                iframeDoc.open();
-                iframeDoc.write(userHtml);
-                iframeDoc.close();
+                iframeDoc.documentElement.innerHTML = userHtml;
             }
         }
     }, [userHtml]);

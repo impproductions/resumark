@@ -8,16 +8,54 @@
     width: 100%;
 }
 
+.switch-tab {
+    position: absolute;
+    top: 4.5rem;
+    right: 0;
+    background-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+    animation: pulse 4s infinite;
+    transition: outline 0.2s ease;
+    font-size: 0.9rem;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0.1rem 0.1rem var(--color-primary);
+        outline: 1px solid transparent;
+    }
+    35% {
+        box-shadow: 0 0 0.4rem 0.1rem var(--color-primary-highlight);
+        outline: 1px solid var(--color-primary-contrast);
+    }
+    65% {
+        box-shadow: 0 0 0.4rem 0.1rem var(--color-primary-highlight);
+        outline: 1px solid var(--color-primary-contrast);
+    }
+    100% {
+        box-shadow: 0 0 0.1rem 0.1rem var(--color-primary);
+        outline: 1px solid transparent;
+    }
+}
+
 .editor {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     width: 70%;
     height: 100%;
+    box-sizing: border-box;
     padding: 0.5rem;
     padding-right: 0;
-    box-sizing: border-box;
 
     @media screen and (min-width: $breakpoint-lg) {
         width: 60%;
@@ -26,6 +64,27 @@
     @media screen and (min-width: $breakpoint-xl) {
         width: 50%;
     }
+}
+
+.editor-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 1;
 }
 
 .preview {

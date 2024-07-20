@@ -42,6 +42,7 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   CV section resize and styling ✅
 -   Theme metadata ✅
 -   Sandbox page preview ✅
+-   Change layout
 -   Theme store tooltip
 -   Syntax reference tooltip
 -   Multiple resumes

@@ -74,12 +74,6 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
             }
             const metadata: ThemeMetadata = YAML.parse(metadataString);
 
-            console.log({
-                metadata,
-                type: typeof metadata,
-                sections: metadata.sections,
-            });
-
             const validator = new Validator<ThemeMetadata>(metadata, [
                 [
                     (obj) => typeof obj === 'object',

@@ -27,4 +27,5 @@ export interface ThemeStoreContextType {
     updateThemeContent: (themeId: string, newContent: string) => void;
     getThemeByName: (themeName: string) => ThemeDefinition | undefined;
     getThemeById: (themeId: string) => ThemeDefinition | undefined;
+    isDefaultTheme: (themeId: string) => boolean;
 }
