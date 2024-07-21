@@ -1,0 +1,67 @@
+.container {
+    --unit: 1.1rem;
+    --width-multiplier: 3;
+    --padding: 0.3rem;
+    --ball-size: calc(1.2 * var(--unit));
+
+    width: calc(var(--width-multiplier) * var(--unit));
+    height: calc(1.8 * var(--unit));
+    border: 2px solid var(--color-primary);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: calc(0.5 * 1.8 * var(--unit));
+    padding: var(--padding);
+    box-sizing: border-box;
+    font-size: calc(var(--unit) * 0.7);
+
+    &[data-checked='true'] .ball {
+        transform: translateX(
+            calc(
+                var(--width-multiplier) / 2 * var(--unit) - var(--ball-size) / 2 -
+                    var(--padding)
+            )
+        );
+    }
+
+    &[data-checked='false'] .ball {
+        transform: translateX(
+            calc(
+                -1 * (var(--width-multiplier) / 2 * var(--unit) -
+                            var(--ball-size) / 2 - var(--padding))
+            )
+        );
+    }
+
+    &[data-checked='true'] .track {
+        background-color: var(--color-surface-6);
+    }
+}
+
+.track {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-surface-3);
+    border-radius: calc(0.5 * 1.8 * var(--unit));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    transition: background-color 0.2s ease;
+}
+
+.ball {
+    height: var(--ball-size);
+    width: var(--ball-size);
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    margin: calc(-0.45 * var(--unit));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-primary-contrast);
+}

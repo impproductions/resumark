@@ -1,6 +1,7 @@
 import style from './NavBar.module.scss';
 import { useEditorState } from '../../context/Editor/hook';
 import resumarkLogo from '../../assets/resumark-icon.png';
+import { ToggleSwitch } from '../ui/ToggleSwitch';
 
 // TODO: mobile
 
@@ -14,14 +15,12 @@ export function NavBar() {
                 <p>ResuMark</p>
             </div>
             <div className={style.themeSwitchContainer}>
-                <button
-                    className={style.themeSwitch}
-                    onClick={() =>
-                        setTheme(config.theme === 'light' ? 'dark' : 'light')
-                    }
-                >
-                    {config.theme === 'light' ? 'Dark' : 'Light'}
-                </button>
+                <ToggleSwitch
+                    checked={config.theme === 'dark'}
+                    onChange={(checked) => setTheme(checked ? 'dark' : 'light')}
+                    onIcon={<i className="bi bi-moon-fill"></i>}
+                    offIcon={<i className="bi bi-sun-fill"></i>}
+                />
             </div>
         </div>
     );

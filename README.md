@@ -45,6 +45,7 @@ If you like the concept of ResuMark and wish someone actually made it happen, I 
 -   Change layout ✅
 -   Theme store tooltip
 -   Syntax reference tooltip ✅
+-   Theme switch toggle ✅
 -   Multiple resumes
 -   Export/push themes
 -   CSS variables in markdowner-theme? ✅
