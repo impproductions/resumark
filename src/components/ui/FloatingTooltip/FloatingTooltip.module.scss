@@ -1,0 +1,55 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    z-index: 1000000;
+    pointer-events: none;
+}
+
+.content {
+    --spacing: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--color-surface-1);
+    color: var(--color-text);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0.2rem var(--color-primary-highlight);
+    outline: 1px solid var(--color-primary);
+
+    &.top {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        margin-bottom: var(--spacing);
+    }
+
+    &.bottom {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: var(--spacing);
+    }
+
+    &.left {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) translateX(-100%);
+        margin-right: var(--spacing);
+    }
+
+    &.right {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) translateX(100%);
+        margin-left: var(--spacing);
+    }
+}

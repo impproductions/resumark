@@ -14,7 +14,7 @@
     box-shadow: 0 0 0.5rem 0.2rem var(--color-primary-highlight);
     outline: 1px solid var(--color-primary-contrast);
     pointer-events: none;
-    clip-path: polygon(-50% -50%, 100% -50%, 100% 150%, 0 100%);
+    clip-path: polygon(-50% -50%, 100% -50%, 100% 150%, -50% 150%);
 }
 
 .close {
@@ -35,6 +35,7 @@
     transition: box-shadow 0.2s ease, outline 0.2s ease;
     clip-path: polygon(-50% 0, 100% 0, 100% 150%, 0 100%);
     outline: 1px solid transparent;
+    cursor: pointer;
 
     i {
         display: flex;

@@ -5,6 +5,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useResumeState } from '../../../../context/Resume/hook';
 import { hash } from '../../../../lib/crypto';
 import { ThemeData } from '../../../../context/Resume/types';
+import { ThemeStoreInteractionTooltip } from './ThemeStoreInteractionTooltip';
 
 export function ThemeCarousel() {
     const [openThemeOutdated, setOpenThemeOutdated] = useState(false);
@@ -19,6 +20,7 @@ export function ThemeCarousel() {
     const { theme, setTheme } = useResumeState();
 
     const [displayedThemes, setDisplayedThemes] = useState(store.themes);
+    const [mouseOverTheme, setMouseOverTheme] = useState<boolean>(false);
     const carouselRef = React.createRef<HTMLDivElement>();
 
     const filterThemes = (search: string) => {
@@ -164,6 +166,7 @@ export function ThemeCarousel() {
 
     return (
         <div className={style.container}>
+            <ThemeStoreInteractionTooltip open={mouseOverTheme} />
             <div className={style.carouselContainer}>
                 <div className={style.carouselControls}>
                     <input
@@ -182,7 +185,12 @@ export function ThemeCarousel() {
                         <i className="bi bi-plus"></i>
                     </button>
                 </div>
-                <div className={style.carousel} ref={carouselRef}>
+                <div
+                    className={style.carousel}
+                    ref={carouselRef}
+                    onMouseEnter={() => setMouseOverTheme(true)}
+                    onMouseLeave={() => setMouseOverTheme(false)}
+                >
                     {displayedThemes.map((t) => (
                         <button
                             key={t.id}

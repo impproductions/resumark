@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+    fill: var(--color-text);
+    stroke: var(--color-text);
+}
+
+.instruction {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    svg {
+        display: flex;
+        flex-shrink: 0;
+        min-width: 1.5rem;
+        width: 1.5rem;
+        max-width: 1.5rem;
+    }
+
+    .double::before {
+        content: 'x2';
+        position: absolute;
+        display: flex;
+        bottom: -0.2rem;
+        left: 0.85rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        background-color: var(--color-surface-2);
+        padding: 0.1rem;
+        line-height: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    span {
+        display: flex;
+        flex-grow: 1;
+        white-space: nowrap;
+    }
+}
