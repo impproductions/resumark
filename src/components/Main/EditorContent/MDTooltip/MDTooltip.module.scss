@@ -1,0 +1,86 @@
+.container {
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    width: 17rem;
+    background-color: var(--color-surface-1);
+    color: var(--color-primary-contrast);
+
+    z-index: 50;
+    border-radius: 0.5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: var(--color-text);
+    box-shadow: 0 0 0.5rem 0.2rem var(--color-primary-highlight);
+    outline: 1px solid var(--color-primary-contrast);
+    pointer-events: none;
+    clip-path: polygon(-50% -50%, 100% -50%, 100% 150%, 0 100%);
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: var(--color-danger);
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.5rem;
+    box-shadow: 0 0 0.1rem 0.1rem var(--color-danger-contrast);
+    pointer-events: all !important;
+    color: var(--color-danger-contrast);
+    border-bottom-left-radius: 100%;
+    transition: box-shadow 0.2s ease, outline 0.2s ease;
+    clip-path: polygon(-50% 0, 100% 0, 100% 150%, 0 100%);
+    outline: 1px solid transparent;
+
+    i {
+        display: flex;
+    }
+}
+
+.close:hover {
+    outline: 1px solid var(--color-danger-contrast);
+    box-shadow: 0 0 0.2rem 0.1rem var(--color-danger);
+}
+
+.close:active {
+    background-color: var(--color-danger-highlight);
+    box-shadow: 0 0 0.2rem 0.1rem var(--color-danger);
+}
+
+.md-syntax {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+    clip-path: inset(-1rem 0 -1rem -1rem);
+    opacity: 0.8;
+}
+
+.cell {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.cell:nth-of-type(odd) {
+    font-family: monospace;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+    flex-basis: 40%;
+}
+.cell:nth-of-type(even) {
+    justify-content: flex-start;
+    text-align: right;
+    flex-basis: 60%;
+    flex-grow: 1;
+}

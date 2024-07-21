@@ -7,6 +7,7 @@ import { ResumeRenderer } from '../ResumeRenderer';
 import { ThemeCarousel } from './ThemeCarousel';
 import { useEditorState } from '../../../context/Editor/hook';
 import { useThemeStore } from '../../../context/ThemesStore/hook';
+import { MDTooltip } from './MDTooltip';
 
 export function EditorContent() {
     const { content, setContent, theme, setTheme } = useResumeState();
@@ -15,6 +16,7 @@ export function EditorContent() {
     const { windowSize } = useWindowSize();
     const previewColumnRef = useRef<HTMLDivElement>(null);
     const [fitIntoPx, setFitIntoPx] = useState(0);
+    const [tooltipOpen, setTooltipOpen] = useState(false);
 
     const view = state.currentView;
 
@@ -42,6 +44,20 @@ export function EditorContent() {
                     >
                         {view === 'content' ? 'css' : 'md'}
                     </button>
+                    {view === 'content' &&
+                        (tooltipOpen ? (
+                            <MDTooltip
+                                open={tooltipOpen}
+                                onClose={() => setTooltipOpen(false)}
+                            />
+                        ) : (
+                            <button
+                                className={style.tooltipButton}
+                                onClick={() => setTooltipOpen(true)}
+                            >
+                                ref
+                            </button>
+                        ))}
                     <div className={style.editorHeader}>
                         <ThemeCarousel />
                     </div>

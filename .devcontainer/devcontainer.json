@@ -7,7 +7,8 @@
         "oven.bun-vscode",
         "prettier.prettier-vscode",
         "esbenp.prettier-vscode",
-        "helixquar.randomeverything"
+        "helixquar.randomeverything",
+        "albymor.increment-selection"
       ],
       "settings": {
         "editor.formatOnSave": true,
