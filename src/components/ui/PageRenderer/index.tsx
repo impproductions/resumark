@@ -20,15 +20,17 @@ export function PageRenderer({ fitIntoPx, children, maxScale = 1 }: Props) {
     );
 
     return (
-        <div
-            className={classNames(style.a4, 'paper')}
-            ref={previewRef}
-            style={{
-                transform: `scale(${previewScale})`,
-                transformOrigin: 'top center',
-            }}
-        >
-            {children}
+        <div className={style.container}>
+            <div
+                className={classNames(style.a4, 'paper')}
+                ref={previewRef}
+                style={{
+                    transform: `scale(${previewScale})`,
+                    transformOrigin: 'top center',
+                }}
+            >
+                {children}
+            </div>
         </div>
     );
 }
