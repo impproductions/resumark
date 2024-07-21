@@ -8,7 +8,8 @@
     width: 100%;
 }
 
-.switch-tab {
+.switch-tab,
+.tooltipButton {
     position: absolute;
     top: 4.5rem;
     right: 0;
@@ -26,41 +27,30 @@
     transition: outline 0.2s ease;
     font-size: 0.9rem;
     min-width: 3rem;
-    clip-path: polygon(-50% -50%, 100% -50%, 100% 150%, 0 100%);
+    clip-path: polygon(-50% -50%, 100% -50%, 100% 150%, -50% 150%);
 }
 
 .tooltipButton {
-    position: absolute;
     top: 7rem;
-    right: 0;
-    background-color: var(--color-primary);
-    color: var(--color-primary-contrast);
-    z-index: 50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: 0;
-    padding: 0.3rem 0.8rem 0.3rem 0.8rem;
-    font-size: 0.9rem;
-    min-width: 3rem;
-    box-shadow: 0 0 0.1rem 0.1rem var(--color-primary);
-    clip-path: polygon(-50% -50%, 100% -50%, 100% 150%, 0 100%);
+    animation: none;
 }
 
 @keyframes pulse {
     0% {
         outline: 1px solid transparent;
+        box-shadow: 0 0 0.2rem 0.2rem var(--color-primary-highlight);
     }
     35% {
         outline: 1px solid var(--color-primary-contrast);
+        box-shadow: 0 0 0.5rem 0.2rem var(--color-primary-highlight);
     }
     65% {
         outline: 1px solid var(--color-primary-contrast);
+        box-shadow: 0 0 0.5rem 0.2rem var(--color-primary-highlight);
     }
     100% {
         outline: 1px solid transparent;
+        box-shadow: 0 0 0.2rem 0.2rem var(--color-primary-highlight);
     }
 }
 

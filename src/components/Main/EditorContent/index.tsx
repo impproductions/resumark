@@ -42,7 +42,11 @@ export function EditorContent() {
                             )
                         }
                     >
-                        {view === 'content' ? 'css' : 'md'}
+                        {view === 'content' ? (
+                            <i className="bi bi-feather"></i>
+                        ) : (
+                            <i className="bi bi-markdown-fill"></i>
+                        )}
                     </button>
                     {view === 'content' &&
                         (tooltipOpen ? (
@@ -55,7 +59,7 @@ export function EditorContent() {
                                 className={style.tooltipButton}
                                 onClick={() => setTooltipOpen(true)}
                             >
-                                ref
+                                <i className="bi bi-question-circle-fill"></i>
                             </button>
                         ))}
                     <div className={style.editorHeader}>
