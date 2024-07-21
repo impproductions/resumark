@@ -13,11 +13,22 @@ export function ThemeStoreInteractionTooltip({ open }: Props) {
         <FloatingTooltip open={open} direction={'bottom'}>
             <div className={style.container}>
                 <div className={style.instruction}>
-                    <LeftButtonIcon className={style.icon} />
+                    <div>
+                        <LeftButtonIcon className={style.icon} />
+                    </div>
                     <span>Select Theme</span>
                 </div>
                 <div className={style.instruction}>
-                    <RightButtonIcon className={style.icon} />
+                    <div className={style.dotted}>
+                        <i className="bi bi-circle-fill"></i>
+                        <LeftButtonIcon className={style.icon} />
+                    </div>
+                    <span>Save Theme</span>
+                </div>
+                <div className={style.instruction}>
+                    <div>
+                        <RightButtonIcon className={style.icon} />
+                    </div>
                     <span>Delete Theme</span>
                 </div>
                 <div className={style.instruction}>

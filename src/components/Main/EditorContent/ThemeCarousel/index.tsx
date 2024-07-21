@@ -195,7 +195,10 @@ export function ThemeCarousel() {
                         <button
                             key={t.id}
                             theme-id={t.id}
-                            className="outlined"
+                            className={classNames(
+                                style.themeButton,
+                                'outlined'
+                            )}
                             onClick={() => handleThemeButtonClick(t)}
                             onDoubleClick={() => renameTheme(t.id)}
                             onContextMenu={(e) => {
@@ -209,7 +212,7 @@ export function ThemeCarousel() {
                                 <i
                                     className={classNames(
                                         'bi',
-                                        'bi-exclamation-circle',
+                                        'bi-circle-fill',
                                         style.updateThemeIcon
                                     )}
                                 ></i>

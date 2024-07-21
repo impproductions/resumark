@@ -23,6 +23,11 @@
     justify-content: flex-start;
     align-items: center;
 
+    & div {
+        min-width: 2.5rem;
+        justify-content: flex-start;
+    }
+
     svg {
         display: flex;
         flex-shrink: 0;
@@ -31,13 +36,22 @@
         max-width: 1.5rem;
     }
 
+    .dotted {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 0.4rem;
+        gap: 0;
+    }
+
     .double::before {
         content: 'x2';
         position: absolute;
         display: flex;
         bottom: -0.2rem;
         left: 0.85rem;
-        font-size: 0.75rem;
+        font-size: 0.6rem;
         font-weight: 600;
         background-color: var(--color-surface-2);
         padding: 0.1rem;
