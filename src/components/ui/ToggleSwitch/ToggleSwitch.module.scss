@@ -1,12 +1,12 @@
 .container {
     --unit: 1.1rem;
-    --width-multiplier: 3;
-    --padding: 0.3rem;
+    --width-multiplier: 3.2;
+    --padding: 0.5rem;
     --ball-size: calc(1.2 * var(--unit));
 
     width: calc(var(--width-multiplier) * var(--unit));
     height: calc(1.8 * var(--unit));
-    border: 2px solid var(--color-primary);
+    // border: 2px solid var(--color-primary);
     display: flex;
     flex-direction: row;
     justify-content: center;

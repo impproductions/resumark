@@ -17,6 +17,8 @@ export const ResumeContext = createContext<ResumeContextType | undefined>(
 );
 
 const DEFAULT_RESUME_DATA: ResumeData = {
+    id: 'default',
+    name: 'Default',
     content: placeholderResume,
     theme: {
         id: 'default',

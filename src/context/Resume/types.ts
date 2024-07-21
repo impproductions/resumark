@@ -7,6 +7,8 @@ export interface ThemeData {
 }
 
 export interface ResumeData {
+    id: string;
+    name: string;
     content: string;
     theme: ThemeData;
 }
