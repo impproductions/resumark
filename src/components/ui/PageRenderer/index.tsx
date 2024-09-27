@@ -3,6 +3,8 @@ import style from './PageRenderer.module.scss';
 import { useBoxSize } from '../../../hooks/useBoxSize';
 import classNames from 'classnames';
 
+import './clear-rest.css';
+
 interface Props {
     fitIntoPx: number;
     children?: React.ReactNode;
@@ -28,6 +30,7 @@ export function PageRenderer({ fitIntoPx, children, maxScale = 1 }: Props) {
                     transform: `scale(${previewScale})`,
                     transformOrigin: 'top center',
                 }}
+                data-preserve-on-print={true}
             >
                 {children}
             </div>

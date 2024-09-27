@@ -1,0 +1,11 @@
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+
+    /* Show only the element with class 'a4' and its children */
+    [data-preserve-on-print='true'],
+    [data-preserve-on-print='true'] * {
+        visibility: visible !important;
+    }
+}
