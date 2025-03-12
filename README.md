@@ -1,69 +1,28 @@
 # Resumark
 
-This is a weekend project I created because I needed to update my resume and I couldn't find any subscription-free, hassle-free editors online, and I don't have Word, and I don't like the templates in Pages, and I'm too lazy to find a solution, and I like writing code, not moving stuff around on a text editor or spend the day choosing a font, and so here we are.
+**Resumark** is a minimalist, markdown-based resume builder created to solve one very specific problem: editing resumes should be simple, free, and hassle-free. This weekend project was born out of frustration with traditional tools: no subscriptions, no fiddling with formatting, no spending hours picking a template. 
 
-## How it works
+## How It Works
 
-I decided to leverage one of the greatest inventions of our time: the Markdown language. This thing is basically just Markdown, extended with a couple of additional goodies for quality of life.
+Resumark leverages Markdown, one of the greatest inventions of our time, extending it slightly with quality-of-life features tailored specifically for resumes.
+
+## Features
+
+- Simple, markdown-based syntax with additional convenience elements
+- Persistent storage using local storage (Note: clearing application data or using incognito mode will erase your resume)
+- Fully customizable via CSS themes
+- Minimal UI
+- Export as PDF (just print the webpage)
+
+## Limitations
+
+- **Single-page resumes only**: If your resume doesn't fit on an A4 sheet, you might need to simplify it 🙄
+- **Local storage only**: No cloud support - I'm not going anywhere near the GDPR-filled nightmare storing all that personal data would be ⛈️
+
+## This sucks! Isn't there anything better?
+
+If Resumark’s minimalism isn't enough and you're looking for a polished product, check out [Resumey](https://resumey.pro). Not affiliated, just impressed!
 
 ## FAQ
 
-lol
-
-## How to use
-
-todo
-
-## Current (and forever) limitations
-
--   There is no concept of pages: either your resume fits in an A4 sheet, or you're out of luck
--   No UI: the resume is defined by the text you write and that's it
--   Storage: the resume is stored in your local storage as a text file. If you're using the application in incognito mode or you clear application data you _will_ lose it
-
-## This sucks, are there better alternatives?
-
-Yes! While frantically working on this to fit it in a busy weekend, I realised I might not be exactly pioneering the concept of "using a slightly extended version of markdown for a specific application", so I did some research and stumbled upon [Resumey](https://resumey.pro).
-If you like the concept of ResuMark and wish someone actually made it happen, I would highly recommend you to use that and never look back! I'm not affiliated, I'm just a fan.
-
-## Roadmap
-
-### In progress
-
--   CSS editor ✅
--   Icons ✅
--   Vertical Spacer ✅
--   Persistent editor settings ✅
--   Actual editors instead of textareas ✅
--   Icon/Favicon ✅
--   Theme switcher ✅
--   Save as... for theme ✅
--   Select theme at startup ✅
--   Select newly added theme ✅
--   CV section resize and styling ✅
--   Theme metadata ✅
--   Sandbox page preview ✅
--   Change layout ✅
--   Theme store tooltip ✅
--   Syntax reference tooltip ✅
--   Theme switch toggle ✅
--   More default themes
--   Multiple resumes
--   Export/push themes
--   CSS variables in markdowner-theme? ✅
--   Expose custom element styles in custom css ✅
--   Allow escaping custom markdown symbols
--   Make page preview fit vertically?
--   Cleanup: extract css element classes from index.css
--   Cleanup: refactor theme store
--   Cleanup: todos
--   Use system settings for light/dark mode
--   Extend Monaco Markdown syntax highlighting with new elements
-
-### Features
-
--   Editor columns resize
-
-### Unlikely to happen
-
--   Page support
--   Docx export
+Nope

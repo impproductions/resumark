@@ -3,6 +3,7 @@ import themeDefault from '../../assets/themes/default.css?raw';
 import themeBasicBitch from '../../assets/themes/basic-bitch.css?raw';
 import themeRetro from '../../assets/themes/retro.css?raw';
 import themeClassy1Col from '../../assets/themes/classy.css?raw';
+import themeSingleColumn from '../../assets/themes/single-column.css?raw';
 import { ThemeDefinition } from './types';
 
 export const defaultThemes: ThemeDefinition[] = [
@@ -41,5 +42,14 @@ export const defaultThemes: ThemeDefinition[] = [
         lastUpdated: '2024-07-14T18:34:28Z',
         lastSeen: '2024-07-14T18:34:28Z',
         hash: hash(themeClassy1Col + 'Classy'),
+    },
+    {
+        id: 'c1de5c62-997d-506f-a47a-bacb8d4137f1',
+        name: 'Single-column',
+        css: themeSingleColumn,
+        tags: ['default', 'simple', 'clean', 'minimal', 'modern'],
+        lastUpdated: '2024-07-14T18:34:28Z',
+        lastSeen: '2024-07-14T18:34:28Z',
+        hash: hash(themeSingleColumn + 'Single-column'),
     },
 ];
