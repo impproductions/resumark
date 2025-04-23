@@ -27,4 +27,4 @@ If Resumark’s minimalism isn't enough and you're looking for a polished produc
 
 ### How do I export my resume?
 
-Just hit the print button/shortcut! remember to check the box to print the background and then save as pdf.
+Just hit your browser's print button/shortcut! remember to check the box to print the background and then save as pdf.
