@@ -32,24 +32,6 @@ _June 2018 - December 2020_
 -   Conducted code reviews and provided mentorship to junior developers.
 -   Improved SEO performance, increasing organic traffic by 25%.
 
-## Projects
-
-### **E-commerce Platform**
-
-GitHub - [https://github.com/johndoe/ecommerce-platform](https://github.com/johndoe/ecommerce-platform)
-
--   Developed a full-featured e-commerce application using React, Redux, and Node.js.
--   Implemented user authentication, product management, and payment integration.
--   Utilized MongoDB for data storage and management.
-
-### **Real-time Chat Application**
-
-GitHub - [https://github.com/johndoe/chat-app](https://github.com/johndoe/chat-app)
-
--   Created a real-time chat application using WebSocket, React, and Node.js.
--   Implemented user presence tracking and private messaging.
--   Deployed the application on AWS using Docker and Kubernetes.
-
 |||||
 
 ## Skills

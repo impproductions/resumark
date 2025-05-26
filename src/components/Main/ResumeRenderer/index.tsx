@@ -25,10 +25,21 @@ export function ResumeRenderer({ fitIntoPx }: Props) {
 
     if (missingSections > 0) {
         problems.push(
-            `You are missing ${missingSections} section${
-                missingSections > 1 ? 's' : ''
+            `You are missing ${missingSections} section${missingSections > 1 ? 's' : ''
             } in your resume. Add more by inserting "|||||" between sections or try a different theme.`
         );
+    }
+
+    if (missingSections < 0) {
+        const sectionSplitLines = content.split("\n").map((line, index) => {
+            return line.includes("|||||") ? index : -1;
+        }).filter(index => index !== -1);
+
+        if (sectionSplitLines.length > 0) {
+            problems.push(
+                `You have ${-missingSections} too many sections in your resume. You need to remove ${-missingSections} section splits ("|||||"). They are located at lines: ${sectionSplitLines.join(', ')}.`
+            );
+        }
     }
 
     if (problems.length > 0) {
