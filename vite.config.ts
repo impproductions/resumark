@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import svgr from 'vite-plugin-svgr';
@@ -14,6 +14,9 @@ export default defineConfig({
       }),
       svgr(),
     ],
+    test: {
+        environment: 'node',
+    },
     css: {
         preprocessorOptions: {},
         modules: {
