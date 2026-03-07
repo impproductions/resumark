@@ -23,6 +23,12 @@ export interface ResumeContextType {
     setContent: (content: ResumeData['content']) => void;
     setTheme: (theme: ResumeData['theme']) => void;
     getThemeMetadata: () => Result<ThemeMetadata>;
+    resumes: ResumeData[];
+    activeResumeId: string;
+    switchResume: (id: string) => void;
+    createResume: (name: string) => void;
+    deleteResume: (id: string) => void;
+    renameResume: (id: string, name: string) => void;
 }
 
 

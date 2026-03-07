@@ -11,6 +11,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 import placeholderResume from '../../assets/placeholder-resume.rmd?raw';
 import YAML from 'yaml';
 import { Err as Err, Ok as Ok, Validator } from '../../lib/validation';
+import uuid from 'uuid4';
 
 export const ResumeContext = createContext<ResumeContextType | undefined>(
     undefined
@@ -18,7 +19,7 @@ export const ResumeContext = createContext<ResumeContextType | undefined>(
 
 const DEFAULT_RESUME_DATA: ResumeData = {
     id: 'default',
-    name: 'Default',
+    name: 'My Resume',
     content: placeholderResume,
     theme: {
         id: 'default',
@@ -33,37 +34,94 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
     const defaultTheme = getThemeByName('default') || DEFAULT_RESUME_DATA.theme;
 
-    const [data, setData] = useState<ResumeData>(
-        getLocalStorage('resumark.state.resume.data') || {
+    const initialResumes: ResumeData[] = getLocalStorage('resumark.state.resumes') || [
+        {
             ...DEFAULT_RESUME_DATA,
             theme: {
                 css: defaultTheme.css,
                 id: defaultTheme.id,
                 name: defaultTheme.name,
             },
+        },
+    ];
+
+    // Migrate legacy single-resume storage
+    const legacySingle: ResumeData | null = getLocalStorage('resumark.state.resume.data');
+    const migratedResumes = (() => {
+        if (legacySingle && !getLocalStorage('resumark.state.resumes')) {
+            return [legacySingle];
         }
+        return initialResumes;
+    })();
+
+    const [resumes, setResumes] = useState<ResumeData[]>(migratedResumes);
+    const [activeResumeId, setActiveResumeId] = useState<string>(
+        getLocalStorage('resumark.state.activeResumeId') || migratedResumes[0].id
     );
 
-    const setDataWrapper = (newData: ResumeData) => {
-        setData(newData);
-        updateLocalStorage(newData, 'resumark.state.resume.data');
+    const activeResume = resumes.find((r) => r.id === activeResumeId) ?? resumes[0];
+
+    const persistResumes = (updated: ResumeData[]) => {
+        setResumes(updated);
+        updateLocalStorage(updated, 'resumark.state.resumes');
+    };
+
+    const persistActiveId = (id: string) => {
+        setActiveResumeId(id);
+        updateLocalStorage(id, 'resumark.state.activeResumeId');
+    };
+
+    const updateActive = (patch: Partial<ResumeData>) => {
+        const updated = resumes.map((r) =>
+            r.id === activeResume.id ? { ...r, ...patch } : r
+        );
+        persistResumes(updated);
     };
 
     const setContent = (content: string) => {
-        setDataWrapper({
-            ...data,
-            content,
-        });
+        updateActive({ content });
     };
 
     const setTheme = (theme: ThemeData) => {
-        setDataWrapper({
-            ...data,
-            theme,
-        });
+        updateActive({ theme });
+    };
+
+    const switchResume = (id: string) => {
+        persistActiveId(id);
+    };
+
+    const createResume = (name: string) => {
+        const newResume: ResumeData = {
+            id: uuid(),
+            name,
+            content: placeholderResume,
+            theme: {
+                css: defaultTheme.css,
+                id: defaultTheme.id,
+                name: defaultTheme.name,
+            },
+        };
+        const updated = [...resumes, newResume];
+        persistResumes(updated);
+        persistActiveId(newResume.id);
+    };
+
+    const deleteResume = (id: string) => {
+        if (resumes.length === 1) return;
+        const updated = resumes.filter((r) => r.id !== id);
+        persistResumes(updated);
+        if (activeResumeId === id) {
+            persistActiveId(updated[0].id);
+        }
+    };
+
+    const renameResume = (id: string, name: string) => {
+        const updated = resumes.map((r) => (r.id === id ? { ...r, name } : r));
+        persistResumes(updated);
     };
 
     const getThemeMetadata = () => {
+        const theme = activeResume.theme;
         try {
             const metadataString = theme.css
                 .split('/***metadata')[1]
@@ -105,17 +163,20 @@ export const ResumeProvider: FC<{ children: ReactNode }> = ({ children }) => {
         }
     };
 
-    const content = data.content;
-    const theme = data.theme;
-
     return (
         <ResumeContext.Provider
             value={{
-                content,
-                theme,
+                content: activeResume.content,
+                theme: activeResume.theme,
                 setContent,
                 setTheme,
                 getThemeMetadata,
+                resumes,
+                activeResumeId: activeResume.id,
+                switchResume,
+                createResume,
+                deleteResume,
+                renameResume,
             }}
         >
             {children}

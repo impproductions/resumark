@@ -1,0 +1,120 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.modal {
+    background-color: var(--color-surface-1);
+    color: var(--color-text);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0.2rem var(--color-primary-highlight);
+    outline: 1px solid var(--color-primary);
+    width: 22rem;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.8rem 0.6rem 1rem;
+    border-bottom: 1px solid var(--color-primary);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    &.active .name-btn {
+        background-color: var(--color-primary);
+        color: var(--color-primary-contrast);
+        border-color: var(--color-primary-highlight);
+    }
+}
+
+.name-btn {
+    flex: 1;
+    text-align: left;
+    padding: 0.4em 0.8em;
+    font-size: 0.95rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rename-input {
+    flex: 1;
+    padding: 0.4em 0.8em;
+    font-size: 0.95rem;
+}
+
+.actions {
+    display: flex;
+    gap: 0.2rem;
+    flex-shrink: 0;
+}
+
+.icon-btn {
+    padding: 0.3em 0.5em;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.danger {
+        color: var(--color-danger);
+    }
+
+    &:disabled {
+        color: var(--color-disabled);
+        cursor: not-allowed;
+        border-color: transparent;
+        box-shadow: none;
+    }
+}
+
+.create-row {
+    display: flex;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    border-top: 1px solid var(--color-primary);
+
+    input {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+.add-btn {
+    flex-shrink: 0;
+    padding: 0.4em 0.7em;
+}
